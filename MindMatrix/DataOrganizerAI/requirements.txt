@@ -1,0 +1,8 @@
+Pillow
+tqdm
+PyPDF2
+moviepy
+pydub
+
+
+
