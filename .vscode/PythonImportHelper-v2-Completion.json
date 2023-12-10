@@ -144,6 +144,47 @@
         "documentation": {}
     },
     {
+        "label": "nltk",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "nltk",
+        "description": "nltk",
+        "detail": "nltk",
+        "documentation": {}
+    },
+    {
+        "label": "word_tokenize",
+        "importPath": "nltk.tokenize",
+        "description": "nltk.tokenize",
+        "isExtraImport": true,
+        "detail": "nltk.tokenize",
+        "documentation": {}
+    },
+    {
+        "label": "PorterStemmer",
+        "importPath": "nltk.stem",
+        "description": "nltk.stem",
+        "isExtraImport": true,
+        "detail": "nltk.stem",
+        "documentation": {}
+    },
+    {
+        "label": "tokenize",
+        "importPath": "utils.preprocessing",
+        "description": "utils.preprocessing",
+        "isExtraImport": true,
+        "detail": "utils.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "stem",
+        "importPath": "utils.preprocessing",
+        "description": "utils.preprocessing",
+        "isExtraImport": true,
+        "detail": "utils.preprocessing",
+        "documentation": {}
+    },
+    {
         "label": "extract_audio_metadata",
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
@@ -411,6 +452,42 @@
         "description": "MindMatrix.DataOrganizerAI.Scripts.data_parsing_master",
         "peekOfCode": "def main():\n    base_dir = '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI'\n    sorted_dir = os.path.join(base_dir, 'SortedFiles')\n    for file_type in os.listdir(sorted_dir):\n        file_type_path = os.path.join(sorted_dir, file_type)\n        if file_type == 'Documents':\n            run_parsing_script(os.path.join(base_dir, '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/Scripts/FileParsing/text_parser.py'), file_type_path)\n        elif file_type == 'Images':\n            run_parsing_script(os.path.join(base_dir, '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/Scripts/FileParsing/image_metadata_extractor.py'), file_type_path)\n        elif file_type == 'Audio':",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.data_parsing_master",
+        "documentation": {}
+    },
+    {
+        "label": "tokenize",
+        "kind": 2,
+        "importPath": "PersonaCore.CharacterTraits.utils.preprocessing",
+        "description": "PersonaCore.CharacterTraits.utils.preprocessing",
+        "peekOfCode": "def tokenize(text):\n    \"\"\"\n    Tokenizes the input text into words.\n    Args:\n    text (str): A string of text to be tokenized.\n    Returns:\n    list: A list of word tokens.\n    \"\"\"\n    return word_tokenize(text)\ndef stem(words):",
+        "detail": "PersonaCore.CharacterTraits.utils.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "stem",
+        "kind": 2,
+        "importPath": "PersonaCore.CharacterTraits.utils.preprocessing",
+        "description": "PersonaCore.CharacterTraits.utils.preprocessing",
+        "peekOfCode": "def stem(words):\n    \"\"\"\n    Stems the list of word tokens.\n    Args:\n    words (list): A list of word tokens.\n    Returns:\n    list: A list of stemmed word tokens.\n    \"\"\"\n    stemmer = PorterStemmer()\n    return [stemmer.stem(word) for word in words]",
+        "detail": "PersonaCore.CharacterTraits.utils.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "analyze_traits",
+        "kind": 2,
+        "importPath": "PersonaCore.CharacterTraits.trait_analysis",
+        "description": "PersonaCore.CharacterTraits.trait_analysis",
+        "peekOfCode": "def analyze_traits(tokens):\n    \"\"\"\n    Analyzes the tokenized and stemmed text to infer character traits.\n    Args:\n    tokens (list): A list of stemmed word tokens.\n    Returns:\n    dict: A dictionary with trait scores.\n    \"\"\"\n    # Placeholder for the actual trait analysis logic\n    # Here you would implement your analysis algorithm",
+        "detail": "PersonaCore.CharacterTraits.trait_analysis",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "PersonaCore.CharacterTraits.trait_analysis",
+        "description": "PersonaCore.CharacterTraits.trait_analysis",
+        "peekOfCode": "def main():\n    input_text = \"Some example text.\"\n    # Tokenize and stem the input text\n    tokens = tokenize(input_text)\n    stemmed_tokens = stem(tokens)\n    # Proceed with trait analysis using the processed tokens\n    traits = analyze_traits(stemmed_tokens)\n    # Output the results\n    print(json.dumps(traits, indent=4))\nif __name__ == \"__main__\":",
+        "detail": "PersonaCore.CharacterTraits.trait_analysis",
         "documentation": {}
     }
 ]
