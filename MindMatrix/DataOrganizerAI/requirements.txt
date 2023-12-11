@@ -5,5 +5,3 @@ moviepy
 pydub
 mutagen
 humanize
-
-
