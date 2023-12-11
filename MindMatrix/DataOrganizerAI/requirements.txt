@@ -5,3 +5,4 @@ moviepy
 pydub
 mutagen
 humanize
+rarfile
