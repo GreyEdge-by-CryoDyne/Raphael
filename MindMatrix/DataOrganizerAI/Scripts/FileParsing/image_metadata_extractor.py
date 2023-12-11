@@ -1,68 +1,55 @@
-import json
-import logging
 import os
-import time
+import json
 from PIL import Image
 from tqdm import tqdm
+import humanize
 
-import PIL
-
-
-def extract_image_metadata(image_path: str, output_dir: str) -> None:
+def extract_image_metadata(file_path):
     """
-    Extracts metadata from an image file and saves it as a JSON file.
-
-    Args:
-        image_path (str): The path to the image file.
-        output_dir (str): The directory to save the JSON file.
-
-    Returns:
-        None
+    Extracts metadata from an image file.
+    Supported formats: JPEG, PNG, etc.
     """
     try:
-        with Image.open(image_path) as img:
-            metadata = img.info
+        with Image.open(file_path) as img:
+            metadata = {
+                "format": img.format,
+                "size": img.size,
+                "mode": img.mode,
+                "info": img.info  # Additional metadata like EXIF data
+            }
+            return metadata
+    except Exception as e:
+        print(f"Error processing {file_path}: {e}")
+        return None
 
-        output_file_path = os.path.join(output_dir, os.path.basename(image_path) + '.json')
-        with open(output_file_path, 'w', encoding='utf-8') as file:
-            json.dump(metadata, file)
-
-        logging.info("Metadata extracted for: %s", image_path)
-    except (FileNotFoundError, PIL.UnidentifiedImageError) as e:
-        logging.error("Error extracting metadata from %s: %s", image_path, e)
-
-def main() -> None:
+def save_metadata(metadata, save_path):
     """
-    Main function to extract image metadata from a directory of images.
+    Saves the extracted metadata to a file in JSON format.
     """
-    sorted_images_dir = '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/SortedFiles/Images'  # Update the path
-    metadata_output_dir = '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/ParsedData/ImageMetadata'  # Update the path
+    with open(save_path, 'w') as f:
+        json.dump(metadata, f, indent=4)
 
-    if not os.path.exists(metadata_output_dir):
-        os.makedirs(metadata_output_dir)
+def process_image_files(image_dir, metadata_dir):
+    image_files = [f for f in os.listdir(image_dir) if f.endswith(('.jpg', '.png', '.jpeg'))] # Add more formats if needed
 
-    files = os.listdir(sorted_images_dir)
-    total_files = len(files)
-    processed_files = 0
+    with tqdm(total=len(image_files), unit='file', desc="Processing Image Files") as pbar:
+        for file in image_files:
+            file_path = os.path.join(image_dir, file)
+            file_size = os.path.getsize(file_path)
+            print(f"Processing {file} (Size: {humanize.naturalsize(file_size)})")
 
-    start_time = time.time()
-
-    with tqdm(total=total_files, unit='file') as pbar:
-        for filename in files:
-            if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
-                extract_image_metadata(os.path.join(sorted_images_dir, filename), metadata_output_dir)
-
-            processed_files += 1
-            elapsed_time = time.time() - start_time
-            remaining_time = (elapsed_time / processed_files) * (total_files - processed_files)
-
-            completion_percentage = (processed_files / total_files) * 100
-
-            pbar.set_description(f"Processing file: {filename}")
-            pbar.set_postfix(completion=f"{completion_percentage:.2f}%", remaining_time=f"{remaining_time:.2f} seconds")
+            metadata = extract_image_metadata(file_path)
+            if metadata:
+                save_path = os.path.join(metadata_dir, os.path.basename(file) + '.json')
+                save_metadata(metadata, save_path)
+            
             pbar.update(1)
+            pbar.set_postfix_str(f"{pbar.n}/{pbar.total} files processed")
 
-    print("Image metadata extraction complete.")
+def main():
+    image_dir = 'path/to/image/files'
+    metadata_dir = 'path/to/ParsedData/ImageMetadata'
+    process_image_files(image_dir, metadata_dir)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -9,6 +9,15 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "EasyID3",
         "importPath": "mutagen.easyid3",
         "description": "mutagen.easyid3",
@@ -90,20 +99,11 @@
         "documentation": {}
     },
     {
-        "label": "MutagenError",
-        "importPath": "mutagen._util",
-        "description": "mutagen._util",
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
         "isExtraImport": true,
-        "detail": "mutagen._util",
-        "documentation": {}
-    },
-    {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
+        "detail": "PIL",
         "documentation": {}
     },
     {
@@ -116,37 +116,20 @@
         "documentation": {}
     },
     {
+        "label": "PdfFileReader",
+        "importPath": "PyPDF2",
+        "description": "PyPDF2",
+        "isExtraImport": true,
+        "detail": "PyPDF2",
+        "documentation": {}
+    },
+    {
         "label": "time",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "time",
         "description": "time",
         "detail": "time",
-        "documentation": {}
-    },
-    {
-        "label": "PIL",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "PIL",
-        "description": "PIL",
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "PdfFileReader",
-        "importPath": "PyPDF2",
-        "description": "PyPDF2",
-        "isExtraImport": true,
-        "detail": "PyPDF2",
         "documentation": {}
     },
     {
@@ -173,6 +156,15 @@
         "importPath": "subprocess",
         "description": "subprocess",
         "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
         "documentation": {}
     },
     {
@@ -226,11 +218,11 @@
         "documentation": {}
     },
     {
-        "label": "extract_metadata",
+        "label": "extract_audio_metadata",
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "peekOfCode": "def extract_metadata(file_path):\n    \"\"\"\n    Extracts metadata from an audio file.\n    Supports various formats like mp3, flac, wavpack, etc.\n    \"\"\"\n    metadata = {}\n    try:\n        audio = None  # Add type hint to avoid \"possibly unbound\" error\n        if file_path.endswith('.mp3'):\n            audio = MP3(file_path, ID3=EasyID3)",
+        "peekOfCode": "def extract_audio_metadata(file_path):\n    \"\"\"\n    Extracts metadata from an audio file.\n    Supports various formats like mp3, flac, wavpack, etc.\n    \"\"\"\n    metadata = {}\n    try:\n        if file_path.endswith('.mp3'):\n            audio = MP3(file_path, ID3=EasyID3)\n        elif file_path.endswith('.flac'):",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "documentation": {}
     },
@@ -239,7 +231,7 @@
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "peekOfCode": "def save_metadata(metadata, save_path):\n    \"\"\"\n    Saves the extracted metadata to a file.\n    \"\"\"\n    # Implement logic to save metadata in a structured format (e.g., JSON)\ndef process_audio_files(audio_dir, metadata_dir):\n    audio_files = [f for f in os.listdir(audio_dir) if f.endswith(('.mp3', '.flac', '.wv'))] # Extend for other formats\n    with tqdm(total=len(audio_files), unit='file', desc=\"Processing Audio Files\") as pbar:\n        for file in audio_files:\n            file_path = os.path.join(audio_dir, file)",
+        "peekOfCode": "def save_metadata(metadata, save_path):\n    \"\"\"\n    Saves the extracted metadata to a file in JSON format.\n    \"\"\"\n    with open(save_path, 'w') as f:\n        json.dump(metadata, f, indent=4)\ndef process_audio_files(audio_dir, metadata_dir):\n    audio_files = [f for f in os.listdir(audio_dir) if f.endswith(('.mp3', '.flac', '.wv'))] # Extend for other formats\n    with tqdm(total=len(audio_files), unit='file', desc=\"Processing Audio Files\") as pbar:\n        for file in audio_files:",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "documentation": {}
     },
@@ -248,7 +240,7 @@
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "peekOfCode": "def process_audio_files(audio_dir, metadata_dir):\n    audio_files = [f for f in os.listdir(audio_dir) if f.endswith(('.mp3', '.flac', '.wv'))] # Extend for other formats\n    with tqdm(total=len(audio_files), unit='file', desc=\"Processing Audio Files\") as pbar:\n        for file in audio_files:\n            file_path = os.path.join(audio_dir, file)\n            file_size = os.path.getsize(file_path)\n            print(f\"Processing {file} (Size: {humanize.naturalsize(file_size)})\")\n            metadata = extract_metadata(file_path)\n            if metadata:\n                save_path = os.path.join(metadata_dir, os.path.basename(file) + '.json')",
+        "peekOfCode": "def process_audio_files(audio_dir, metadata_dir):\n    audio_files = [f for f in os.listdir(audio_dir) if f.endswith(('.mp3', '.flac', '.wv'))] # Extend for other formats\n    with tqdm(total=len(audio_files), unit='file', desc=\"Processing Audio Files\") as pbar:\n        for file in audio_files:\n            file_path = os.path.join(audio_dir, file)\n            file_size = os.path.getsize(file_path)\n            print(f\"Processing {file} (Size: {humanize.naturalsize(file_size)})\")\n            metadata = extract_audio_metadata(file_path)\n            if metadata:\n                save_path = os.path.join(metadata_dir, os.path.basename(file) + '.json')",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "documentation": {}
     },
@@ -266,7 +258,25 @@
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "peekOfCode": "def extract_image_metadata(image_path: str, output_dir: str) -> None:\n    \"\"\"\n    Extracts metadata from an image file and saves it as a JSON file.\n    Args:\n        image_path (str): The path to the image file.\n        output_dir (str): The directory to save the JSON file.\n    Returns:\n        None\n    \"\"\"\n    try:",
+        "peekOfCode": "def extract_image_metadata(file_path):\n    \"\"\"\n    Extracts metadata from an image file.\n    Supported formats: JPEG, PNG, etc.\n    \"\"\"\n    try:\n        with Image.open(file_path) as img:\n            metadata = {\n                \"format\": img.format,\n                \"size\": img.size,",
+        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "save_metadata",
+        "kind": 2,
+        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
+        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
+        "peekOfCode": "def save_metadata(metadata, save_path):\n    \"\"\"\n    Saves the extracted metadata to a file in JSON format.\n    \"\"\"\n    with open(save_path, 'w') as f:\n        json.dump(metadata, f, indent=4)\ndef process_image_files(image_dir, metadata_dir):\n    image_files = [f for f in os.listdir(image_dir) if f.endswith(('.jpg', '.png', '.jpeg'))] # Add more formats if needed\n    with tqdm(total=len(image_files), unit='file', desc=\"Processing Image Files\") as pbar:\n        for file in image_files:",
+        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "process_image_files",
+        "kind": 2,
+        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
+        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
+        "peekOfCode": "def process_image_files(image_dir, metadata_dir):\n    image_files = [f for f in os.listdir(image_dir) if f.endswith(('.jpg', '.png', '.jpeg'))] # Add more formats if needed\n    with tqdm(total=len(image_files), unit='file', desc=\"Processing Image Files\") as pbar:\n        for file in image_files:\n            file_path = os.path.join(image_dir, file)\n            file_size = os.path.getsize(file_path)\n            print(f\"Processing {file} (Size: {humanize.naturalsize(file_size)})\")\n            metadata = extract_image_metadata(file_path)\n            if metadata:\n                save_path = os.path.join(metadata_dir, os.path.basename(file) + '.json')",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
         "documentation": {}
     },
@@ -275,7 +285,7 @@
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "peekOfCode": "def main() -> None:\n    \"\"\"\n    Main function to extract image metadata from a directory of images.\n    \"\"\"\n    sorted_images_dir = '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/SortedFiles/Images'  # Update the path\n    metadata_output_dir = '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/ParsedData/ImageMetadata'  # Update the path\n    if not os.path.exists(metadata_output_dir):\n        os.makedirs(metadata_output_dir)\n    files = os.listdir(sorted_images_dir)\n    total_files = len(files)",
+        "peekOfCode": "def main():\n    image_dir = 'path/to/image/files'\n    metadata_dir = 'path/to/ParsedData/ImageMetadata'\n    process_image_files(image_dir, metadata_dir)\nif __name__ == '__main__':\n    main()",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
         "documentation": {}
     },
@@ -370,11 +380,38 @@
         "documentation": {}
     },
     {
-        "label": "check_requirements",
+        "label": "install_requirements",
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "def check_requirements():\n    \"\"\"\n    Check if the requirements for the script are met by running the 'check_requirements.py' script.\n    If the requirements check fails, print an error message and return.\n    \"\"\"\n    result = subprocess.run(\n        [\n            \"python\",\n            \"/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/Scripts/[Other Scripts]/check_requirements.py\",\n        ],",
+        "peekOfCode": "def install_requirements(requirements_file):\n    try:\n        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', requirements_file])\n        logging.info(\"Successfully installed requirements from {}\".format(requirements_file))\n    except subprocess.CalledProcessError as e:\n        logging.error(\"Failed to install requirements: {}\".format(e))\n        sys.exit(1)\ndef find_requirements_file(start_path):\n    for root, dirs, files in os.walk(start_path):\n        if 'requirements.txt' in files:",
+        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "documentation": {}
+    },
+    {
+        "label": "find_requirements_file",
+        "kind": 2,
+        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "peekOfCode": "def find_requirements_file(start_path):\n    for root, dirs, files in os.walk(start_path):\n        if 'requirements.txt' in files:\n            return os.path.join(root, 'requirements.txt')\n    return None\ndef find_data_dumps_dir(start_path):\n    for root, dirs, files in os.walk(start_path):\n        if 'DataDumps' in dirs:\n            return os.path.join(root, 'DataDumps')\n    return None",
+        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "documentation": {}
+    },
+    {
+        "label": "find_data_dumps_dir",
+        "kind": 2,
+        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "peekOfCode": "def find_data_dumps_dir(start_path):\n    for root, dirs, files in os.walk(start_path):\n        if 'DataDumps' in dirs:\n            return os.path.join(root, 'DataDumps')\n    return None\ndef categorize_file(file):\n    # Define your file categorization logic here\n    file_ext = file.split(\".\")[-1].lower()\n    if file_ext in ['mp3', 'wav', 'aac']:\n        return \"Audio\"",
+        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "documentation": {}
+    },
+    {
+        "label": "categorize_file",
+        "kind": 2,
+        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "peekOfCode": "def categorize_file(file):\n    # Define your file categorization logic here\n    file_ext = file.split(\".\")[-1].lower()\n    if file_ext in ['mp3', 'wav', 'aac']:\n        return \"Audio\"\n    elif file_ext in ['doc', 'docx', 'txt']:\n        return \"Documents\"\n    elif file_ext in ['jpg', 'jpeg', 'png', 'gif']:\n        return \"Images\"\n    elif file_ext == 'pdf':",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
@@ -383,7 +420,7 @@
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "def handle_file(file):\n    \"\"\"\n    Handle each file by moving it to the corresponding directory based on its extension.\n    Args:\n        file (str): The name of the file to be handled.\n    \"\"\"\n    file_path = os.path.join(DOWNLOADS_DIR, file)\n    if os.path.isfile(file_path):\n        try:\n            file_ext = file.split(\".\")[-1]",
+        "peekOfCode": "def handle_file(file, sorted_dir, data_dumps_dir):\n    file_path = os.path.join(data_dumps_dir, file)\n    if os.path.isfile(file_path):\n        try:\n            category = categorize_file(file)\n            category_dir = os.path.join(sorted_dir, category)\n            if not os.path.exists(category_dir):\n                os.makedirs(category_dir)\n            shutil.move(file_path, os.path.join(category_dir, file))\n            logging.info(\"Moved: %s to %s\", file, category)",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
@@ -392,7 +429,7 @@
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "def get_folder_size(folder):\n    \"\"\"\n    Get the size of a folder in bytes.\n    Args:\n        folder (str): The path to the folder.\n    Returns:\n        int: The size of the folder in bytes.\n    \"\"\"\n    total_size = 0\n    for path, _, files in os.walk(folder):",
+        "peekOfCode": "def get_folder_size(folder):\n    total_size = 0\n    for path, _, files in os.walk(folder):\n        for f in files:\n            fp = os.path.join(path, f)\n            total_size += os.path.getsize(fp)\n    return total_size\ndef progress_bar(current, total, start_time, initial_size):\n    elapsed_time = time.time() - start_time\n    completion = current / total",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
@@ -401,16 +438,7 @@
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "def progress_bar(current, total, start_time_param, initial_size_param):\n    \"\"\"\n    Display a progress bar with completion percentage and estimated time left.\n    Args:\n        current (int): The current progress value.\n        total (int): The total progress value.\n        start_time_param (float): The start time of the process.\n        initial_size_param (int): The size of the initial folder in bytes.\n    \"\"\"\n    elapsed_time_param = time.time() - start_time_param",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "documentation": {}
-    },
-    {
-        "label": "scan_additional_directory",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "def scan_additional_directory():\n    \"\"\"\n    Prompt the user to scan an additional directory if no files are found in the default directory.\n    The user can choose to scan the whole PC or a specific directory.\n    List all scannable directories on the device.\n    \"\"\"\n    print(\"No files found in the default directory.\")\n    print(\"Do you want to scan an additional directory?\")\n    print(\"1. Scan the whole PC\")\n    print(\"2. Scan a specific directory\")",
+        "peekOfCode": "def progress_bar(current, total, start_time, initial_size):\n    elapsed_time = time.time() - start_time\n    completion = current / total\n    progress = int(completion * 50)\n    remaining_time = (elapsed_time / completion) * (1 - completion) if completion > 0 else 0\n    time_left = time.strftime(\"%H:%M:%S\", time.gmtime(remaining_time))\n    percentage = int(completion * 100)\n    bar = \"[\" + \"#\" * progress + \" \" * (50 - progress) + \"]\"\n    print(f\"\\r{bar} {percentage}% Complete | Time Left: {time_left} | Initial Folder Size: {initial_size} bytes\", end=\"\")\n# Script start",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
@@ -419,16 +447,25 @@
         "kind": 5,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "log_path = os.path.join(os.path.dirname(__file__), \"Logs/SortingLogs/file_sorting.log\")\nlogging.basicConfig(\n    filename=log_path, level=logging.INFO, format=\"%(asctime)s %(message)s\"\n)\nDOWNLOADS_DIR = (\n    \"/home/ncacord/Desktop/raphael_core/AI_Core/Datasets/Datasets_to_process\"  # Replace with your actual Downloads folder path\n)\nSORTED_DIR = \"DataOrganizerAI/SortedFiles\"\nsorted_dir = os.path.join(os.path.dirname(__file__), SORTED_DIR)\nif not os.path.exists(sorted_dir):",
+        "peekOfCode": "log_path = \"file_sorting.log\"\nlogging.basicConfig(filename=log_path, level=logging.INFO, format=\"%(asctime)s %(message)s\")\n# Check for requirements.txt and install requirements\nrequirements_file = find_requirements_file(os.path.expanduser(\"~\"))\nif requirements_file:\n    install_requirements(requirements_file)\n# Find DataDumps directory\ndata_dumps_dir = find_data_dumps_dir(os.path.expanduser(\"~\"))\nif not data_dumps_dir:\n    logging.error(\"DataDumps directory not found.\")",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
     {
-        "label": "DOWNLOADS_DIR",
+        "label": "requirements_file",
         "kind": 5,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "DOWNLOADS_DIR = (\n    \"/home/ncacord/Desktop/raphael_core/AI_Core/Datasets/Datasets_to_process\"  # Replace with your actual Downloads folder path\n)\nSORTED_DIR = \"DataOrganizerAI/SortedFiles\"\nsorted_dir = os.path.join(os.path.dirname(__file__), SORTED_DIR)\nif not os.path.exists(sorted_dir):\n    os.makedirs(sorted_dir)\ndef handle_file(file):\n    \"\"\"\n    Handle each file by moving it to the corresponding directory based on its extension.",
+        "peekOfCode": "requirements_file = find_requirements_file(os.path.expanduser(\"~\"))\nif requirements_file:\n    install_requirements(requirements_file)\n# Find DataDumps directory\ndata_dumps_dir = find_data_dumps_dir(os.path.expanduser(\"~\"))\nif not data_dumps_dir:\n    logging.error(\"DataDumps directory not found.\")\n    sys.exit(1)\n# Sorting files in DataDumps\nSORTED_DIR = \"SortedFiles\"",
+        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "documentation": {}
+    },
+    {
+        "label": "data_dumps_dir",
+        "kind": 5,
+        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
+        "peekOfCode": "data_dumps_dir = find_data_dumps_dir(os.path.expanduser(\"~\"))\nif not data_dumps_dir:\n    logging.error(\"DataDumps directory not found.\")\n    sys.exit(1)\n# Sorting files in DataDumps\nSORTED_DIR = \"SortedFiles\"\nsorted_dir = os.path.join(data_dumps_dir, SORTED_DIR)\nif not os.path.exists(sorted_dir):\n    os.makedirs(sorted_dir)\ninitial_size = get_folder_size(data_dumps_dir)",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
@@ -437,7 +474,7 @@
         "kind": 5,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "SORTED_DIR = \"DataOrganizerAI/SortedFiles\"\nsorted_dir = os.path.join(os.path.dirname(__file__), SORTED_DIR)\nif not os.path.exists(sorted_dir):\n    os.makedirs(sorted_dir)\ndef handle_file(file):\n    \"\"\"\n    Handle each file by moving it to the corresponding directory based on its extension.\n    Args:\n        file (str): The name of the file to be handled.\n    \"\"\"",
+        "peekOfCode": "SORTED_DIR = \"SortedFiles\"\nsorted_dir = os.path.join(data_dumps_dir, SORTED_DIR)\nif not os.path.exists(sorted_dir):\n    os.makedirs(sorted_dir)\ninitial_size = get_folder_size(data_dumps_dir)\nstart_time = time.time()\nfile_count = len(os.listdir(data_dumps_dir))\ncurrent_file = 0\nfor filename in os.listdir(data_dumps_dir):\n    handle_file(filename, sorted_dir, data_dumps_dir)",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
@@ -446,7 +483,7 @@
         "kind": 5,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "sorted_dir = os.path.join(os.path.dirname(__file__), SORTED_DIR)\nif not os.path.exists(sorted_dir):\n    os.makedirs(sorted_dir)\ndef handle_file(file):\n    \"\"\"\n    Handle each file by moving it to the corresponding directory based on its extension.\n    Args:\n        file (str): The name of the file to be handled.\n    \"\"\"\n    file_path = os.path.join(DOWNLOADS_DIR, file)",
+        "peekOfCode": "sorted_dir = os.path.join(data_dumps_dir, SORTED_DIR)\nif not os.path.exists(sorted_dir):\n    os.makedirs(sorted_dir)\ninitial_size = get_folder_size(data_dumps_dir)\nstart_time = time.time()\nfile_count = len(os.listdir(data_dumps_dir))\ncurrent_file = 0\nfor filename in os.listdir(data_dumps_dir):\n    handle_file(filename, sorted_dir, data_dumps_dir)\n    current_file += 1",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
@@ -455,7 +492,7 @@
         "kind": 5,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "initial_size = get_folder_size(DOWNLOADS_DIR)\n# Start sorting process\nstart_time = time.time()\nfile_count = len(os.listdir(DOWNLOADS_DIR))\nCURRENT_FILE = 0\nif file_count == 0:\n    scan_additional_directory()\nelse:\n    for filename in os.listdir(DOWNLOADS_DIR):\n        handle_file(filename)",
+        "peekOfCode": "initial_size = get_folder_size(data_dumps_dir)\nstart_time = time.time()\nfile_count = len(os.listdir(data_dumps_dir))\ncurrent_file = 0\nfor filename in os.listdir(data_dumps_dir):\n    handle_file(filename, sorted_dir, data_dumps_dir)\n    current_file += 1\n    progress_bar(current_file, file_count, start_time, initial_size)\nlogging.info(\"Files sorted by type. Check sorting logs for details.\")\n# Script end",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
@@ -464,7 +501,7 @@
         "kind": 5,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "start_time = time.time()\nfile_count = len(os.listdir(DOWNLOADS_DIR))\nCURRENT_FILE = 0\nif file_count == 0:\n    scan_additional_directory()\nelse:\n    for filename in os.listdir(DOWNLOADS_DIR):\n        handle_file(filename)\n        CURRENT_FILE += 1\n        progress_bar(CURRENT_FILE, file_count, start_time, initial_size)",
+        "peekOfCode": "start_time = time.time()\nfile_count = len(os.listdir(data_dumps_dir))\ncurrent_file = 0\nfor filename in os.listdir(data_dumps_dir):\n    handle_file(filename, sorted_dir, data_dumps_dir)\n    current_file += 1\n    progress_bar(current_file, file_count, start_time, initial_size)\nlogging.info(\"Files sorted by type. Check sorting logs for details.\")\n# Script end",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
@@ -473,16 +510,16 @@
         "kind": 5,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "file_count = len(os.listdir(DOWNLOADS_DIR))\nCURRENT_FILE = 0\nif file_count == 0:\n    scan_additional_directory()\nelse:\n    for filename in os.listdir(DOWNLOADS_DIR):\n        handle_file(filename)\n        CURRENT_FILE += 1\n        progress_bar(CURRENT_FILE, file_count, start_time, initial_size)\n    print(",
+        "peekOfCode": "file_count = len(os.listdir(data_dumps_dir))\ncurrent_file = 0\nfor filename in os.listdir(data_dumps_dir):\n    handle_file(filename, sorted_dir, data_dumps_dir)\n    current_file += 1\n    progress_bar(current_file, file_count, start_time, initial_size)\nlogging.info(\"Files sorted by type. Check sorting logs for details.\")\n# Script end",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
     {
-        "label": "CURRENT_FILE",
+        "label": "current_file",
         "kind": 5,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "CURRENT_FILE = 0\nif file_count == 0:\n    scan_additional_directory()\nelse:\n    for filename in os.listdir(DOWNLOADS_DIR):\n        handle_file(filename)\n        CURRENT_FILE += 1\n        progress_bar(CURRENT_FILE, file_count, start_time, initial_size)\n    print(\n        \"\\nFiles sorted by type. Check '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/Logs/SortingLogs' for the operation log.\"",
+        "peekOfCode": "current_file = 0\nfor filename in os.listdir(data_dumps_dir):\n    handle_file(filename, sorted_dir, data_dumps_dir)\n    current_file += 1\n    progress_bar(current_file, file_count, start_time, initial_size)\nlogging.info(\"Files sorted by type. Check sorting logs for details.\")\n# Script end",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
