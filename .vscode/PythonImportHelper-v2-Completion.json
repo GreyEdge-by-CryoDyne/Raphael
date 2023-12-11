@@ -9,20 +9,92 @@
         "documentation": {}
     },
     {
-        "label": "logging",
-        "kind": 6,
+        "label": "EasyID3",
+        "importPath": "mutagen.easyid3",
+        "description": "mutagen.easyid3",
         "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
+        "detail": "mutagen.easyid3",
         "documentation": {}
     },
     {
-        "label": "mediainfo",
-        "importPath": "pydub.utils",
-        "description": "pydub.utils",
+        "label": "FLAC",
+        "importPath": "mutagen.flac",
+        "description": "mutagen.flac",
         "isExtraImport": true,
-        "detail": "pydub.utils",
+        "detail": "mutagen.flac",
+        "documentation": {}
+    },
+    {
+        "label": "MP3",
+        "importPath": "mutagen.mp3",
+        "description": "mutagen.mp3",
+        "isExtraImport": true,
+        "detail": "mutagen.mp3",
+        "documentation": {}
+    },
+    {
+        "label": "WavPack",
+        "importPath": "mutagen.wavpack",
+        "description": "mutagen.wavpack",
+        "isExtraImport": true,
+        "detail": "mutagen.wavpack",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "humanize",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "humanize",
+        "description": "humanize",
+        "detail": "humanize",
+        "documentation": {}
+    },
+    {
+        "label": "MutagenError",
+        "importPath": "mutagen._util",
+        "description": "mutagen._util",
+        "isExtraImport": true,
+        "detail": "mutagen._util",
         "documentation": {}
     },
     {
@@ -35,52 +107,21 @@
         "documentation": {}
     },
     {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
         "label": "time",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "time",
         "description": "time",
         "detail": "time",
-        "documentation": {}
-    },
-    {
-        "label": "tqdm",
-        "importPath": "tqdm",
-        "description": "tqdm",
-        "isExtraImport": true,
-        "detail": "tqdm",
-        "documentation": {}
-    },
-    {
-        "label": "tqdm",
-        "importPath": "tqdm",
-        "description": "tqdm",
-        "isExtraImport": true,
-        "detail": "tqdm",
-        "documentation": {}
-    },
-    {
-        "label": "tqdm",
-        "importPath": "tqdm",
-        "description": "tqdm",
-        "isExtraImport": true,
-        "detail": "tqdm",
-        "documentation": {}
-    },
-    {
-        "label": "tqdm",
-        "importPath": "tqdm",
-        "description": "tqdm",
-        "isExtraImport": true,
-        "detail": "tqdm",
-        "documentation": {}
-    },
-    {
-        "label": "tqdm",
-        "importPath": "tqdm",
-        "description": "tqdm",
-        "isExtraImport": true,
-        "detail": "tqdm",
         "documentation": {}
     },
     {
@@ -185,11 +226,29 @@
         "documentation": {}
     },
     {
-        "label": "extract_audio_metadata",
+        "label": "extract_metadata",
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "peekOfCode": "def extract_audio_metadata(audio_path, output_dir):\n    try:\n        metadata = mediainfo(audio_path)\n        output_file_path = os.path.join(output_dir, os.path.basename(audio_path) + '.json')\n        with open(output_file_path, 'w') as file:\n            json.dump(metadata, file)\n        logging.info(\"Metadata extracted for: %s\", audio_path)\n        return True\n    except Exception as e:\n        logging.error(\"Failed to extract metadata for: %s. Error: %s\", audio_path, str(e))",
+        "peekOfCode": "def extract_metadata(file_path):\n    \"\"\"\n    Extracts metadata from an audio file.\n    Supports various formats like mp3, flac, wavpack, etc.\n    \"\"\"\n    metadata = {}\n    try:\n        audio = None  # Add type hint to avoid \"possibly unbound\" error\n        if file_path.endswith('.mp3'):\n            audio = MP3(file_path, ID3=EasyID3)",
+        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "save_metadata",
+        "kind": 2,
+        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
+        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
+        "peekOfCode": "def save_metadata(metadata, save_path):\n    \"\"\"\n    Saves the extracted metadata to a file.\n    \"\"\"\n    # Implement logic to save metadata in a structured format (e.g., JSON)\ndef process_audio_files(audio_dir, metadata_dir):\n    audio_files = [f for f in os.listdir(audio_dir) if f.endswith(('.mp3', '.flac', '.wv'))] # Extend for other formats\n    with tqdm(total=len(audio_files), unit='file', desc=\"Processing Audio Files\") as pbar:\n        for file in audio_files:\n            file_path = os.path.join(audio_dir, file)",
+        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
+        "documentation": {}
+    },
+    {
+        "label": "process_audio_files",
+        "kind": 2,
+        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
+        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
+        "peekOfCode": "def process_audio_files(audio_dir, metadata_dir):\n    audio_files = [f for f in os.listdir(audio_dir) if f.endswith(('.mp3', '.flac', '.wv'))] # Extend for other formats\n    with tqdm(total=len(audio_files), unit='file', desc=\"Processing Audio Files\") as pbar:\n        for file in audio_files:\n            file_path = os.path.join(audio_dir, file)\n            file_size = os.path.getsize(file_path)\n            print(f\"Processing {file} (Size: {humanize.naturalsize(file_size)})\")\n            metadata = extract_metadata(file_path)\n            if metadata:\n                save_path = os.path.join(metadata_dir, os.path.basename(file) + '.json')",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "documentation": {}
     },
@@ -198,7 +257,7 @@
         "kind": 2,
         "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "peekOfCode": "def main():\n    logging.basicConfig(filename='audio_metadata_extraction.log', level=logging.INFO)\n    sorted_audio_dir = '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/SortedFiles/Audio'  # Update this path\n    metadata_output_dir = '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/ParsedData/AudioMetadata'  # Update this path\n    if not os.path.exists(metadata_output_dir):\n        os.makedirs(metadata_output_dir)\n    audio_files = [filename for filename in os.listdir(sorted_audio_dir) if filename.lower().endswith(('.mp3', '.wav', '.aac', '.flac'))]\n    total_files = len(audio_files)\n    print(\"Audio metadata extraction started.\")\n    start_time = time.time()",
+        "peekOfCode": "def main():\n    audio_dir = 'path/to/audio/files'\n    metadata_dir = 'path/to/ParsedData/AudioMetadata'\n    process_audio_files(audio_dir, metadata_dir)\nif __name__ == '__main__':\n    main()",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
         "documentation": {}
     },
