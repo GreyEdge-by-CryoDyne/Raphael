@@ -6,3 +6,4 @@ pydub
 mutagen
 humanize
 rarfile
+python-magic
