@@ -1,19 +1,15 @@
 import subprocess
-import pkg_resources
 
-def check_requirements():
-    with open('/home/ncacord/Desktop/DataOrganizerAI/requirements.txt', encoding='utf-8') as f:
-        required_packages = [line.strip() for line in f if line.strip()]
+def check_and_install(package):
+    try:
+        subprocess.run(['pip', 'install', package], check=True)
+    except subprocess.CalledProcessError:
+        print(f"Failed to install {package}")
 
-    installed_packages = [pkg.key for pkg in list(pkg_resources.working_set)]
-    missing_packages = set(required_packages) - set(installed_packages)
+def main():
+    requirements = ['mutagen', 'Pillow', 'PyPDF2', 'moviepy']
+    for package in requirements:
+        check_and_install(package)
 
-    if missing_packages:
-        print("Missing packages detected:")
-        for package in missing_packages:
-            print(f"- {package}")
-        subprocess.run(["pip", "install", "-r", "requirements.txt"], check=True)
-    else:
-        return False
-
-    return True
+if __name__ == '__main__':
+    main()
