@@ -44,33 +44,6 @@
         "documentation": {}
     },
     {
-        "label": "shutil",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "shutil",
-        "description": "shutil",
-        "detail": "shutil",
-        "documentation": {}
-    },
-    {
-        "label": "tarfile",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "tarfile",
-        "description": "tarfile",
-        "detail": "tarfile",
-        "documentation": {}
-    },
-    {
-        "label": "rarfile",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "rarfile",
-        "description": "rarfile",
-        "detail": "rarfile",
-        "documentation": {}
-    },
-    {
         "label": "nltk",
         "kind": 6,
         "isExtraImport": true,
@@ -172,60 +145,6 @@
         "description": "IntegrationEngine.Scripts.decompress_files",
         "peekOfCode": "processing_dir = \"IntegrationEngine/Processing\"\ndef decompress_zip(file_path, destination, progress_bar):\n    with zipfile.ZipFile(file_path, \"r\") as zip_ref:\n        for file in tqdm(\n            iterable=zip_ref.namelist(),\n            total=len(zip_ref.namelist()),\n            desc=f\"Decompressing ZIP: {os.path.basename(file_path)}\",\n            unit=\"file\",\n            leave=False,\n        ):",
         "detail": "IntegrationEngine.Scripts.decompress_files",
-        "documentation": {}
-    },
-    {
-        "label": "uncompress_file",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "def uncompress_file(file_path, destination):\n    \"\"\"\n    Uncompresses a file to the specified destination.\n    Args:\n        file_path (str): The path of the file to be uncompressed.\n        destination (str): The destination directory where the uncompressed files will be placed.\n    Returns:\n        bool: True if the file was successfully uncompressed, False otherwise.\n    \"\"\"\n    try:",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "documentation": {}
-    },
-    {
-        "label": "sort_files",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "def sort_files():\n    \"\"\"\n    Sorts files in a directory based on their file extension.\n    This function iterates through all the files in the source directory and\n    categorizes them based on their file extension. Files with recognized\n    extensions are moved to their respective destination directories, while\n    unrecognized file types are moved to a separate directory.\n    Parameters:\n        None\n    Returns:",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "documentation": {}
-    },
-    {
-        "label": "UNCOMPRESSIBLE_DIR",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "UNCOMPRESSIBLE_DIR = \"MindMatrix/DataOrganizerAI/Uncompressible\"\nSORTED_DIR = \"MindMatrix/DataOrganizerAI/Sorted\"  # Define the SORTED_DIR variable\n# Ensure existence of necessary directories\nos.makedirs(SORTED_DIR, exist_ok=True)\nos.makedirs(UNCOMPRESSIBLE_DIR, exist_ok=True)\n# Supported file types for sorting\nfile_types = {\n    \".txt\": \"Documents\",\n    \".pdf\": \"PDFs\",\n    \".jpg\": \"Images\",",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "documentation": {}
-    },
-    {
-        "label": "SORTED_DIR",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "SORTED_DIR = \"MindMatrix/DataOrganizerAI/Sorted\"  # Define the SORTED_DIR variable\n# Ensure existence of necessary directories\nos.makedirs(SORTED_DIR, exist_ok=True)\nos.makedirs(UNCOMPRESSIBLE_DIR, exist_ok=True)\n# Supported file types for sorting\nfile_types = {\n    \".txt\": \"Documents\",\n    \".pdf\": \"PDFs\",\n    \".jpg\": \"Images\",\n    \".png\": \"Images\",",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "documentation": {}
-    },
-    {
-        "label": "file_types",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "file_types = {\n    \".txt\": \"Documents\",\n    \".pdf\": \"PDFs\",\n    \".jpg\": \"Images\",\n    \".png\": \"Images\",\n    \".mp3\": \"Audio\",\n    \".wav\": \"Audio\",\n    \".mp4\": \"Videos\",\n    \".avi\": \"Videos\"\n    # Add other file types as needed",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "documentation": {}
-    },
-    {
-        "label": "archive_formats",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "peekOfCode": "archive_formats = [\".zip\", \".tar\", \".rar\"]\ndef uncompress_file(file_path, destination):\n    \"\"\"\n    Uncompresses a file to the specified destination.\n    Args:\n        file_path (str): The path of the file to be uncompressed.\n        destination (str): The destination directory where the uncompressed files will be placed.\n    Returns:\n        bool: True if the file was successfully uncompressed, False otherwise.\n    \"\"\"",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "documentation": {}
     },
     {
