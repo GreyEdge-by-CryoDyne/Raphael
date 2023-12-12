@@ -49,14 +49,6 @@ file_types = {
 archive_formats = [".zip", ".tar", ".rar"]
 
 
-import logging
-import os
-import rarfile
-import shutil
-import tarfile
-import zipfile
-import os
-
 def uncompress_file(file_path, destination): # type: ignore
     """
     Uncompresses a file to the specified destination.
@@ -237,6 +229,6 @@ def sort_files():
             # Move unrecognized file types to UNCOMPRESSIBLE_DIR
             shutil.move(file_path, UNCOMPRESSIBLE_DIR)
 
-
 if __name__ == "__main__":
-    sort_files()    
+    # Add an indented block of code here
+    pass
