@@ -1,3 +1,14 @@
+"""
+This script sorts files in a directory based on their file extension.
+It categorizes files with recognized extensions into their respective destination directories,
+while unrecognized file types are moved to a separate directory.
+
+The script also includes a function to uncompress files in supported archive formats.
+
+Functions:
+- uncompress_file(file_path, destination): Uncompresses a file to the specified destination.
+- sort_files(): Sorts files in a directory based on their file extension.
+"""
 """_summary_Returns:_type_: _description_"""
 import os
 import shutil
@@ -44,6 +55,7 @@ import rarfile
 import shutil
 import tarfile
 import zipfile
+import os
 
 def uncompress_file(file_path, destination): # type: ignore
     """
@@ -190,7 +202,7 @@ def sort_files():
         None
     """
     source_dir = "Dumps"
-    for root, dirs, files in os.walk("/"):
+    for root, dirs, _ in os.walk("/"):
         if "Dumps" in dirs:
             source_dir = os.path.join(root, "Dumps")
             break
@@ -207,13 +219,11 @@ def sort_files():
         file_extension = os.path.splitext(file)[1].lower()
 
         # Check if file is an archive and uncompress it
-        uncompressible_dir = "MindMatrix/DataOrganizerAI/Uncompressible"  # Define the uncompressible_dir variable
-
         if file_extension in archive_formats:
             if uncompress_file(file_path, source_dir):
                 os.remove(file_path)  # Remove the archive after extraction
             else:
-                shutil.move(file_path, uncompressible_dir)
+                shutil.move(file_path, UNCOMPRESSIBLE_DIR)  # Replace 'uncompressible_dir' with 'UNCOMPRESSIBLE_DIR'
                 continue
 
         # Sort files into categories
@@ -224,9 +234,9 @@ def sort_files():
             os.makedirs(destination_dir, exist_ok=True)
             shutil.move(file_path, destination_dir)
         else:
-            # Move unrecognized file types to uncompressible
-            shutil.move(file_path, uncompressible_dir)
+            # Move unrecognized file types to UNCOMPRESSIBLE_DIR
+            shutil.move(file_path, UNCOMPRESSIBLE_DIR)
 
 
 if __name__ == "__main__":
-    sort_files()
+    sort_files()    
