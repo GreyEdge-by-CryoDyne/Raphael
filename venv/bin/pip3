@@ -1,4 +1,4 @@
-#!/home/ncacord/Desktop/Raphael/venv/bin/python3
+#!/home/ncacord/Desktop/Raphael/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
