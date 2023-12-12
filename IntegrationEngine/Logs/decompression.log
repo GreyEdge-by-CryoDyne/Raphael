@@ -1,0 +1,22 @@
+2023-12-12 12:09:18,230:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/stackapps.com.7z
+2023-12-12 12:09:18,419:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/ux.meta.stackexchange.com.7z
+2023-12-12 12:09:18,430:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tezos.meta.stackexchange.com.7z
+2023-12-12 12:09:18,438:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/stellar.meta.stackexchange.com.7z
+2023-12-12 12:09:18,609:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/stackoverflow.com-Tags.7z
+2023-12-12 12:09:19,354:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tor.stackexchange.com.7z
+2023-12-12 12:09:19,556:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/vegetarianism.stackexchange.com.7z
+2023-12-12 12:09:19,585:ERROR:Error decompressing /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tezos.stackexchange.com.7z: Invalid data stream
+2023-12-12 12:09:19,586:INFO:Skipping file due to decompression error: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tezos.stackexchange.com.7z
+2023-12-12 12:09:19,775:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/spanish.meta.stackexchange.com.7z
+2023-12-12 12:09:19,827:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/vegetarianism.meta.stackexchange.com.7z
+2023-12-12 12:09:20,061:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/wordpress.meta.stackexchange.com.7z
+2023-12-12 12:09:26,013:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/space.stackexchange.com.7z
+2023-12-12 12:09:26,072:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tor.meta.stackexchange.com.7z
+2023-12-12 12:09:26,484:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/windowsphone.stackexchange.com.7z
+2023-12-12 12:09:27,366:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tex.meta.stackexchange.com.7z
+2023-12-12 12:09:27,584:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/space.meta.stackexchange.com.7z
+2023-12-12 12:09:28,221:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/stats.meta.stackexchange.com.7z
+2023-12-12 12:09:29,046:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/woodworking.stackexchange.com.7z
+2023-12-12 12:09:29,046:ERROR:Error decompressing /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/ux.stackexchange.com.7z: invalid header data
+2023-12-12 12:09:29,046:INFO:Skipping file due to decompression error: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/ux.stackexchange.com.7z
+2023-12-12 12:09:29,081:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/woodworking.meta.stackexchange.com.7z

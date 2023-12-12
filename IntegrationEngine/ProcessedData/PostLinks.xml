@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<postlinks>
+  <row Id="10" CreationDate="2015-03-17T18:50:16.293" PostId="14" RelatedPostId="3" LinkTypeId="1" />
+  <row Id="43" CreationDate="2015-03-17T21:05:39.470" PostId="30" RelatedPostId="1" LinkTypeId="1" />
+  <row Id="53" CreationDate="2015-03-17T21:48:29.757" PostId="36" RelatedPostId="21" LinkTypeId="1" />
+  <row Id="74" CreationDate="2015-03-18T04:56:19.573" PostId="39" RelatedPostId="30" LinkTypeId="1" />
+  <row Id="124" CreationDate="2015-03-19T15:14:33.100" PostId="63" RelatedPostId="12" LinkTypeId="1" />
+  <row Id="127" CreationDate="2015-03-19T16:56:13.797" PostId="21" RelatedPostId="63" LinkTypeId="1" />
+  <row Id="148" CreationDate="2015-03-20T13:26:49.917" PostId="12" RelatedPostId="63" LinkTypeId="1" />
+  <row Id="151" CreationDate="2015-03-20T18:27:01.510" PostId="70" RelatedPostId="12" LinkTypeId="1" />
+  <row Id="182" CreationDate="2015-03-21T02:31:32.740" PostId="80" RelatedPostId="72" LinkTypeId="1" />
+  <row Id="193" CreationDate="2015-03-24T00:11:36.973" PostId="14" RelatedPostId="63" LinkTypeId="1" />
+  <row Id="214" CreationDate="2015-03-26T19:07:15.630" PostId="106" RelatedPostId="107" LinkTypeId="1" />
+  <row Id="275" CreationDate="2015-03-30T19:42:12.617" PostId="53" RelatedPostId="54" LinkTypeId="1" />
+  <row Id="372" CreationDate="2015-04-08T04:49:55.433" PostId="153" RelatedPostId="114" LinkTypeId="1" />
+  <row Id="528" CreationDate="2015-04-29T17:20:27.770" PostId="205" RelatedPostId="53" LinkTypeId="1" />
+  <row Id="539" CreationDate="2015-04-29T17:36:53.537" PostId="192" RelatedPostId="204" LinkTypeId="1" />
+  <row Id="557" CreationDate="2015-04-30T16:37:49.943" PostId="214" RelatedPostId="192" LinkTypeId="1" />
+  <row Id="558" CreationDate="2015-04-30T16:37:49.943" PostId="214" RelatedPostId="204" LinkTypeId="1" />
+  <row Id="580" CreationDate="2015-05-06T18:27:53.547" PostId="176" RelatedPostId="192" LinkTypeId="1" />
+  <row Id="581" CreationDate="2015-05-07T22:21:59.350" PostId="192" RelatedPostId="218" LinkTypeId="1" />
+  <row Id="592" CreationDate="2015-05-08T01:36:57.963" PostId="204" RelatedPostId="192" LinkTypeId="1" />
+  <row Id="603" CreationDate="2015-05-08T01:37:52.787" PostId="218" RelatedPostId="192" LinkTypeId="1" />
+  <row Id="605" CreationDate="2015-05-08T04:49:16.077" PostId="219" RelatedPostId="59" LinkTypeId="3" />
+  <row Id="814" CreationDate="2015-05-22T18:23:15.817" PostId="226" RelatedPostId="53" LinkTypeId="1" />
+  <row Id="920" CreationDate="2015-06-08T04:31:41.907" PostId="232" RelatedPostId="39" LinkTypeId="1" />
+  <row Id="945" CreationDate="2015-06-15T03:05:26.087" PostId="233" RelatedPostId="204" LinkTypeId="1" />
+  <row Id="946" CreationDate="2015-06-15T03:05:26.087" PostId="233" RelatedPostId="192" LinkTypeId="1" />
+  <row Id="976" CreationDate="2015-06-18T02:41:21.283" PostId="238" RelatedPostId="14" LinkTypeId="1" />
+  <row Id="1083" CreationDate="2015-07-02T05:46:58.060" PostId="255" RelatedPostId="183" LinkTypeId="1" />
+  <row Id="1487" CreationDate="2015-11-23T14:28:01.223" PostId="287" RelatedPostId="48" LinkTypeId="1" />
+  <row Id="1861" CreationDate="2016-03-11T01:42:34.783" PostId="323" RelatedPostId="317" LinkTypeId="1" />
+  <row Id="2069" CreationDate="2016-06-12T13:45:27.430" PostId="335" RelatedPostId="156" LinkTypeId="1" />
+  <row Id="2082" CreationDate="2016-06-15T09:16:55.647" PostId="337" RelatedPostId="268" LinkTypeId="1" />
+  <row Id="2083" CreationDate="2016-06-15T09:16:55.647" PostId="337" RelatedPostId="12" LinkTypeId="1" />
+  <row Id="5062" CreationDate="2020-01-01T16:51:42.333" PostId="386" RelatedPostId="369" LinkTypeId="1" />
+  <row Id="6607" CreationDate="2021-01-12T18:29:16.323" PostId="397" RelatedPostId="395" LinkTypeId="1" />
+  <row Id="6608" CreationDate="2021-01-19T19:32:32.387" PostId="398" RelatedPostId="386" LinkTypeId="1" />
+  <row Id="7194" CreationDate="2022-01-12T16:51:15.830" PostId="405" RelatedPostId="398" LinkTypeId="1" />
+  <row Id="7566" CreationDate="2023-01-26T17:00:18.740" PostId="416" RelatedPostId="405" LinkTypeId="1" />
+</postlinks>
