@@ -188,7 +188,15 @@ def sort_files():
     Returns:
         None
     """
-    source_dir = "MindMatrix/DataOrganizerAI/Source"  # Define the source_dir variable
+    source_dir = "Dumps"
+    for root, dirs, files in os.walk("/"):
+        if "Dumps" in dirs:
+            source_dir = os.path.join(root, "Dumps")
+            break
+
+    if not source_dir:
+        print("Source directory not found.")
+        exit()
 
     SORTED_DIR = "MindMatrix/DataOrganizerAI/Sorted"  # Define the SORTED_DIR variable
     UNCOMPRESSIBLE_DIR = "MindMatrix/DataOrganizerAI/Uncompressible"  # Define the UNCOMPRESSIBLE_DIR variable
