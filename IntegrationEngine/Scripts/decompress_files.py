@@ -3,15 +3,18 @@ import zipfile
 import py7zr
 import logging
 
+# Correct path for the Logs directory
+log_file_path = "/home/ncacord/Desktop/Raphael/IntegrationEngine/Logs/decompression.log"
+
 # Setup basic logging
 logging.basicConfig(
-    filename="IntegrationEngine/Logs/decompression.log",
+    filename=log_file_path,
     level=logging.INFO,
     format="%(asctime)s:%(levelname)s:%(message)s",
 )
 
-input_dir = "IntegrationEngine/Input"
-processed_dir = "IntegrationEngine/ProcessedData"
+input_dir = "/home/ncacord/Desktop/Raphael/IntegrationEngine/Input"
+processed_dir = "/home/ncacord/Desktop/Raphael/IntegrationEngine/ProcessedData"
 
 
 def decompress_file(file_path, extension):
