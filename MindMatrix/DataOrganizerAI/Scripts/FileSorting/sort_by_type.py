@@ -8,7 +8,7 @@ import rarfile  # Requires 'rarfile' package
 
 # Set up logging
 logging.basicConfig(
-    filename="/home/ncacord/Desktop/Raphael/MindMatrix/DataOrganizerAI/Logs/SortingLogs",
+    filename="/home/ncacord/Desktop/Raphael/MindMatrix/DataOrganizerAI/Logs/SortingLogs/file_sorting.log",
     level=logging.ERROR,
     format="%(asctime)s:%(levelname)s:%(message)s",
 )
