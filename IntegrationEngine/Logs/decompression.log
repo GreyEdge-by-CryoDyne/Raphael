@@ -20,3 +20,23 @@
 2023-12-12 12:09:29,046:ERROR:Error decompressing /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/ux.stackexchange.com.7z: invalid header data
 2023-12-12 12:09:29,046:INFO:Skipping file due to decompression error: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/ux.stackexchange.com.7z
 2023-12-12 12:09:29,081:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/woodworking.meta.stackexchange.com.7z
+2023-12-12 12:21:13,957:INFO:Decompressed: IntegrationEngine/Input/stackapps.com.7z
+2023-12-12 12:21:14,545:INFO:Decompressed: IntegrationEngine/Input/ux.meta.stackexchange.com.7z
+2023-12-12 12:21:14,600:INFO:Decompressed: IntegrationEngine/Input/tezos.meta.stackexchange.com.7z
+2023-12-12 12:21:14,666:INFO:Decompressed: IntegrationEngine/Input/stellar.meta.stackexchange.com.7z
+2023-12-12 12:21:14,853:INFO:Decompressed: IntegrationEngine/Input/stackoverflow.com-Tags.7z
+2023-12-12 12:21:16,267:INFO:Decompressed: IntegrationEngine/Input/tor.stackexchange.com.7z
+2023-12-12 12:21:16,761:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.stackexchange.com.7z
+2023-12-12 12:21:16,874:ERROR:Error decompressing IntegrationEngine/Input/tezos.stackexchange.com.7z: Invalid data stream
+2023-12-12 12:21:17,236:INFO:Decompressed: IntegrationEngine/Input/spanish.meta.stackexchange.com.7z
+2023-12-12 12:21:17,351:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.meta.stackexchange.com.7z
+2023-12-12 12:21:17,832:INFO:Decompressed: IntegrationEngine/Input/wordpress.meta.stackexchange.com.7z
+2023-12-12 12:21:26,304:INFO:Decompressed: IntegrationEngine/Input/space.stackexchange.com.7z
+2023-12-12 12:21:26,458:INFO:Decompressed: IntegrationEngine/Input/tor.meta.stackexchange.com.7z
+2023-12-12 12:21:27,280:INFO:Decompressed: IntegrationEngine/Input/windowsphone.stackexchange.com.7z
+2023-12-12 12:21:29,078:INFO:Decompressed: IntegrationEngine/Input/tex.meta.stackexchange.com.7z
+2023-12-12 12:21:29,527:INFO:Decompressed: IntegrationEngine/Input/space.meta.stackexchange.com.7z
+2023-12-12 12:21:30,775:INFO:Decompressed: IntegrationEngine/Input/stats.meta.stackexchange.com.7z
+2023-12-12 12:21:32,538:INFO:Decompressed: IntegrationEngine/Input/woodworking.stackexchange.com.7z
+2023-12-12 12:21:32,540:ERROR:Error decompressing IntegrationEngine/Input/ux.stackexchange.com.7z: invalid header data
+2023-12-12 12:21:32,664:INFO:Decompressed: IntegrationEngine/Input/woodworking.meta.stackexchange.com.7z
