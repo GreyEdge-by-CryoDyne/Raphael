@@ -42,6 +42,14 @@ import logging
 import zipfile
 import tarfile
 import rarfile
+import shutil
+import shutil
+import os
+import shutil
+import zipfile
+import tarfile
+import rarfile
+import logging
 
 def uncompress_file_new(file_path, destination):
     """
@@ -181,6 +189,9 @@ def sort_files():
         None
     """
     source_dir = "MindMatrix/DataOrganizerAI/Source"  # Define the source_dir variable
+
+    SORTED_DIR = "MindMatrix/DataOrganizerAI/Sorted"  # Define the SORTED_DIR variable
+    UNCOMPRESSIBLE_DIR = "MindMatrix/DataOrganizerAI/Uncompressible"  # Define the UNCOMPRESSIBLE_DIR variable
 
     for file in os.listdir(source_dir):
         file_path = os.path.join(source_dir, file)
