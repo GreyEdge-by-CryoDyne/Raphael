@@ -1,9 +1,0 @@
-Pillow
-tqdm
-PyPDF2
-moviepy
-pydub
-mutagen
-humanize
-rarfile
-python-magic
