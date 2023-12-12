@@ -1,78 +1,290 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <tags>
-  <row Id="1" TagName="bug" Count="2" IsRequired="True" />
-  <row Id="2" TagName="feature-request" Count="7" IsRequired="True" />
-  <row Id="3" TagName="discussion" Count="132" IsRequired="True" />
-  <row Id="4" TagName="faq" Count="0" IsModeratorOnly="True" />
-  <row Id="5" TagName="status-completed" Count="1" IsModeratorOnly="True" />
-  <row Id="6" TagName="status-declined" Count="0" IsModeratorOnly="True" />
-  <row Id="7" TagName="status-bydesign" Count="1" ExcerptPostId="413" WikiPostId="412" IsModeratorOnly="True" />
-  <row Id="8" TagName="status-norepro" Count="0" IsModeratorOnly="True" />
-  <row Id="9" TagName="status-reproduced" Count="0" IsModeratorOnly="True" />
-  <row Id="10" TagName="status-planned" Count="0" ExcerptPostId="411" WikiPostId="410" IsModeratorOnly="True" />
-  <row Id="11" TagName="status-deferred" Count="0" ExcerptPostId="409" WikiPostId="408" IsModeratorOnly="True" />
-  <row Id="12" TagName="status-review" Count="0" ExcerptPostId="392" WikiPostId="391" IsModeratorOnly="True" />
-  <row Id="13" TagName="support" Count="12" IsRequired="True" />
-  <row Id="14" TagName="reputation" Count="0" />
-  <row Id="15" TagName="site-promotion" Count="0" />
-  <row Id="16" TagName="questions" Count="3" />
-  <row Id="17" TagName="tags" Count="20" />
-  <row Id="18" TagName="comments" Count="2" />
-  <row Id="19" TagName="badges" Count="1" />
-  <row Id="20" TagName="answers" Count="6" />
-  <row Id="21" TagName="search" Count="0" />
-  <row Id="22" TagName="voting" Count="1" />
-  <row Id="23" TagName="editing" Count="0" />
-  <row Id="24" TagName="bounty" Count="0" />
-  <row Id="25" TagName="user-interface" Count="0" />
-  <row Id="26" TagName="specific-question" Count="2" />
-  <row Id="27" TagName="accepted-answer" Count="1" />
-  <row Id="28" TagName="markdown" Count="0" />
-  <row Id="29" TagName="stackexchange" Count="1" />
-  <row Id="30" TagName="community-wiki" Count="0" />
-  <row Id="31" TagName="down-votes" Count="0" />
-  <row Id="32" TagName="openid" Count="0" />
-  <row Id="33" TagName="migration" Count="1" />
-  <row Id="34" TagName="vote-to-close" Count="1" />
-  <row Id="35" TagName="exact-duplicates" Count="0" />
-  <row Id="36" TagName="etiquette" Count="0" />
-  <row Id="37" TagName="notifications" Count="0" />
-  <row Id="38" TagName="users" Count="0" />
-  <row Id="39" TagName="closed-questions" Count="1" />
-  <row Id="40" TagName="hyperlinks" Count="0" />
-  <row Id="41" TagName="data-dump" Count="0" />
-  <row Id="42" TagName="asking-questions" Count="8" />
-  <row Id="43" TagName="recent-activity" Count="0" />
-  <row Id="44" TagName="new-users" Count="0" />
-  <row Id="45" TagName="profile-page" Count="0" />
-  <row Id="46" TagName="flagging" Count="0" />
-  <row Id="47" TagName="chat" Count="2" />
-  <row Id="48" TagName="unanswered-questions" Count="0" />
-  <row Id="49" TagName="retag-request" Count="6" />
-  <row Id="50" TagName="moderation" Count="4" />
-  <row Id="51" TagName="data-explorer" Count="0" />
-  <row Id="52" TagName="close-reasons" Count="6" />
-  <row Id="53" TagName="user-accounts" Count="0" />
-  <row Id="54" TagName="formatting" Count="0" />
-  <row Id="55" TagName="interesting-tags" Count="0" />
-  <row Id="56" TagName="up-votes" Count="0" />
-  <row Id="57" TagName="meta" Count="2" />
-  <row Id="58" TagName="statistics" Count="4" />
-  <row Id="59" TagName="login" Count="0" />
-  <row Id="60" TagName="rss" Count="0" />
-  <row Id="61" TagName="bookmarks" Count="0" />
-  <row Id="62" TagName="deleted-questions" Count="1" />
-  <row Id="63" TagName="tagging" Count="5" />
-  <row Id="64" TagName="votes" Count="0" />
-  <row Id="65" TagName="tag-synonyms" Count="1" />
-  <row Id="66" TagName="design" Count="0" />
-  <row Id="67" TagName="featured" Count="0" IsModeratorOnly="True" />
-  <row Id="68" TagName="community-ads" Count="0" IsModeratorOnly="True" />
-  <row Id="71" TagName="community-project" Count="4" />
-  <row Id="72" TagName="tag-ban" Count="2" />
-  <row Id="73" TagName="diy" Count="3" />
-  <row Id="75" TagName="scope" Count="3" />
-  <row Id="77" TagName="election" Count="3" />
-  <row Id="78" TagName="moderators" Count="2" />
-  <row Id="79" TagName="product-discovery" Count="0" ExcerptPostId="388" WikiPostId="387" IsModeratorOnly="True" />
+  <row Id="4" TagName="contacts" Count="84" ExcerptPostId="3741" WikiPostId="3740" />
+  <row Id="5" TagName="transfer" Count="15" />
+  <row Id="6" TagName="android" Count="17" ExcerptPostId="1003" WikiPostId="1002" />
+  <row Id="8" TagName="sync" Count="114" ExcerptPostId="197" WikiPostId="196" />
+  <row Id="9" TagName="macos" Count="6" ExcerptPostId="1474" WikiPostId="1473" />
+  <row Id="14" TagName="apps" Count="273" ExcerptPostId="263" WikiPostId="262" />
+  <row Id="15" TagName="zune" Count="43" ExcerptPostId="115" WikiPostId="114" />
+  <row Id="16" TagName="music" Count="92" ExcerptPostId="3327" WikiPostId="3326" />
+  <row Id="20" TagName="7.5" Count="48" ExcerptPostId="155" WikiPostId="154" />
+  <row Id="26" TagName="keyboard" Count="57" ExcerptPostId="3745" WikiPostId="3744" />
+  <row Id="30" TagName="photos" Count="79" ExcerptPostId="14231" WikiPostId="14230" />
+  <row Id="32" TagName="gmail" Count="32" ExcerptPostId="1117" WikiPostId="1116" />
+  <row Id="33" TagName="windows-live" Count="18" ExcerptPostId="814" WikiPostId="813" />
+  <row Id="34" TagName="google" Count="34" ExcerptPostId="3306" WikiPostId="3305" />
+  <row Id="35" TagName="bing" Count="9" ExcerptPostId="1079" WikiPostId="1078" />
+  <row Id="36" TagName="search" Count="16" />
+  <row Id="39" TagName="battery" Count="67" ExcerptPostId="3308" WikiPostId="3307" />
+  <row Id="40" TagName="device-comparison" Count="3" />
+  <row Id="44" TagName="tiles" Count="33" ExcerptPostId="648" WikiPostId="647" />
+  <row Id="45" TagName="autocorrect" Count="13" ExcerptPostId="14030" WikiPostId="14029" />
+  <row Id="46" TagName="dictionary" Count="10" ExcerptPostId="11194" WikiPostId="11193" />
+  <row Id="47" TagName="email" Count="122" ExcerptPostId="265" WikiPostId="264" />
+  <row Id="49" TagName="bluetooth" Count="60" ExcerptPostId="274" WikiPostId="273" />
+  <row Id="50" TagName="pictures" Count="30" />
+  <row Id="51" TagName="video" Count="60" ExcerptPostId="3301" WikiPostId="3300" />
+  <row Id="52" TagName="wifi" Count="87" ExcerptPostId="158" WikiPostId="157" />
+  <row Id="53" TagName="settings" Count="165" ExcerptPostId="272" WikiPostId="271" />
+  <row Id="55" TagName="store" Count="140" ExcerptPostId="269" WikiPostId="268" />
+  <row Id="56" TagName="internet-sharing" Count="35" ExcerptPostId="816" WikiPostId="815" />
+  <row Id="57" TagName="3g" Count="12" ExcerptPostId="267" WikiPostId="266" />
+  <row Id="58" TagName="buttons" Count="20" />
+  <row Id="59" TagName="zune-player" Count="10" ExcerptPostId="1105" WikiPostId="1104" />
+  <row Id="61" TagName="internet" Count="23" />
+  <row Id="62" TagName="exchange" Count="22" ExcerptPostId="3796" WikiPostId="3795" />
+  <row Id="65" TagName="backup" Count="69" ExcerptPostId="1464" WikiPostId="1463" />
+  <row Id="66" TagName="sms" Count="81" ExcerptPostId="1554" WikiPostId="1553" />
+  <row Id="68" TagName="games" Count="26" />
+  <row Id="69" TagName="history" Count="7" />
+  <row Id="70" TagName="language-setting" Count="12" />
+  <row Id="72" TagName="messaging" Count="34" ExcerptPostId="3790" WikiPostId="3789" />
+  <row Id="76" TagName="multi-tasking" Count="5" />
+  <row Id="83" TagName="homebrew" Count="2" />
+  <row Id="85" TagName="custom-rom" Count="4" />
+  <row Id="86" TagName="security" Count="37" ExcerptPostId="1556" WikiPostId="1555" />
+  <row Id="88" TagName="wireless-sync" Count="6" />
+  <row Id="90" TagName="lumia-900" Count="6" ExcerptPostId="820" WikiPostId="819" />
+  <row Id="91" TagName="outlook" Count="49" ExcerptPostId="3794" WikiPostId="3793" />
+  <row Id="93" TagName="calendars" Count="69" />
+  <row Id="95" TagName="audio" Count="38" ExcerptPostId="3747" WikiPostId="3746" />
+  <row Id="98" TagName="mediaplayer" Count="12" />
+  <row Id="103" TagName="cellular" Count="13" ExcerptPostId="3332" WikiPostId="3331" />
+  <row Id="107" TagName="networking" Count="21" />
+  <row Id="114" TagName="whatsapp" Count="167" ExcerptPostId="824" WikiPostId="823" />
+  <row Id="117" TagName="notifications" Count="64" ExcerptPostId="2508" WikiPostId="2507" />
+  <row Id="118" TagName="storage" Count="87" ExcerptPostId="1581" WikiPostId="1580" />
+  <row Id="120" TagName="data-usage" Count="10" />
+  <row Id="121" TagName="metering" Count="2" />
+  <row Id="122" TagName="diagnostics" Count="6" />
+  <row Id="125" TagName="system-tray" Count="5" ExcerptPostId="916" WikiPostId="915" />
+  <row Id="126" TagName="user-experience" Count="3" />
+  <row Id="127" TagName="internet-explorer" Count="43" ExcerptPostId="652" WikiPostId="651" />
+  <row Id="129" TagName="podcast" Count="21" />
+  <row Id="130" TagName="rooting" Count="13" ExcerptPostId="296" WikiPostId="295" />
+  <row Id="131" TagName="unlocking" Count="13" ExcerptPostId="298" WikiPostId="297" />
+  <row Id="133" TagName="camera" Count="75" ExcerptPostId="3321" WikiPostId="3320" />
+  <row Id="134" TagName="cleaning" Count="5" />
+  <row Id="135" TagName="usb" Count="26" ExcerptPostId="3788" WikiPostId="3787" />
+  <row Id="136" TagName="file-transfer" Count="27" />
+  <row Id="137" TagName="facebook" Count="50" ExcerptPostId="1462" WikiPostId="1461" />
+  <row Id="141" TagName="people-hub" Count="15" ExcerptPostId="654" WikiPostId="653" />
+  <row Id="142" TagName="linked-accounts" Count="11" />
+  <row Id="143" TagName="twitter" Count="11" ExcerptPostId="1466" WikiPostId="1465" />
+  <row Id="144" TagName="password" Count="20" ExcerptPostId="3330" WikiPostId="3329" />
+  <row Id="145" TagName="accounts" Count="17" ExcerptPostId="16914" WikiPostId="16913" />
+  <row Id="149" TagName="cellular-data" Count="38" ExcerptPostId="13152" WikiPostId="13151" />
+  <row Id="150" TagName="functionality" Count="37" ExcerptPostId="650" WikiPostId="649" />
+  <row Id="152" TagName="location-services" Count="14" ExcerptPostId="3310" WikiPostId="3309" />
+  <row Id="153" TagName="attachments" Count="10" ExcerptPostId="14237" WikiPostId="14236" />
+  <row Id="154" TagName="find-my-phone" Count="16" ExcerptPostId="581" WikiPostId="580" />
+  <row Id="155" TagName="orientation" Count="5" />
+  <row Id="156" TagName="ringtone" Count="34" ExcerptPostId="4056" WikiPostId="4055" />
+  <row Id="159" TagName="update" Count="141" ExcerptPostId="3304" WikiPostId="3303" />
+  <row Id="160" TagName="volume" Count="18" ExcerptPostId="4096" WikiPostId="4095" />
+  <row Id="165" TagName="file-format" Count="7" ExcerptPostId="11190" WikiPostId="11189" />
+  <row Id="166" TagName="low-end-devices" Count="3" ExcerptPostId="571" WikiPostId="570" />
+  <row Id="169" TagName="alarms" Count="12" ExcerptPostId="14175" WikiPostId="14174" />
+  <row Id="172" TagName="personalization" Count="13" />
+  <row Id="174" TagName="office-hub" Count="9" ExcerptPostId="1468" WikiPostId="1467" />
+  <row Id="177" TagName="8.0" Count="314" ExcerptPostId="1096" WikiPostId="1095" />
+  <row Id="180" TagName="organization" Count="5" />
+  <row Id="181" TagName="phone-connector-mac" Count="9" ExcerptPostId="634" WikiPostId="633" />
+  <row Id="182" TagName="htc" Count="17" ExcerptPostId="1552" WikiPostId="1551" />
+  <row Id="188" TagName="background-tasks" Count="14" ExcerptPostId="14239" WikiPostId="14238" />
+  <row Id="190" TagName="compatibility" Count="7" />
+  <row Id="192" TagName="nokia-lumia-800" Count="18" ExcerptPostId="818" WikiPostId="817" />
+  <row Id="202" TagName="voicemail" Count="6" />
+  <row Id="204" TagName="charging" Count="22" ExcerptPostId="3323" WikiPostId="3322" />
+  <row Id="205" TagName="lock-screen" Count="61" ExcerptPostId="4054" WikiPostId="4053" />
+  <row Id="206" TagName="privacy" Count="5" />
+  <row Id="207" TagName="soft-reset" Count="8" />
+  <row Id="208" TagName="nokia-lumia-920" Count="95" ExcerptPostId="940" WikiPostId="939" />
+  <row Id="210" TagName="pin-to-start" Count="21" ExcerptPostId="3164" WikiPostId="3163" />
+  <row Id="211" TagName="reminders" Count="5" />
+  <row Id="217" TagName="maps" Count="28" />
+  <row Id="220" TagName="flash-player" Count="3" ExcerptPostId="1081" WikiPostId="1080" />
+  <row Id="221" TagName="flash-memory" Count="5" ExcerptPostId="1083" WikiPostId="1082" />
+  <row Id="225" TagName="htc-8x" Count="15" ExcerptPostId="1238" WikiPostId="1237" />
+  <row Id="228" TagName="wallet" Count="5" ExcerptPostId="1236" WikiPostId="1235" />
+  <row Id="229" TagName="kids-corner" Count="9" ExcerptPostId="1169" WikiPostId="1168" />
+  <row Id="231" TagName="here" Count="16" ExcerptPostId="2947" WikiPostId="2946" />
+  <row Id="232" TagName="display" Count="17" ExcerptPostId="3314" WikiPostId="3313" />
+  <row Id="234" TagName="xbox-music" Count="29" ExcerptPostId="4058" WikiPostId="4057" />
+  <row Id="235" TagName="streaming" Count="11" />
+  <row Id="237" TagName="vibration" Count="9" />
+  <row Id="238" TagName="xbox-live" Count="8" />
+  <row Id="241" TagName="microsoft-account" Count="71" ExcerptPostId="3743" WikiPostId="3742" />
+  <row Id="243" TagName="messenger" Count="11" ExcerptPostId="1476" WikiPostId="1475" />
+  <row Id="245" TagName="uploading" Count="13" ExcerptPostId="11188" WikiPostId="11187" />
+  <row Id="247" TagName="carddav" Count="2" />
+  <row Id="248" TagName="people" Count="12" ExcerptPostId="3312" WikiPostId="3311" />
+  <row Id="250" TagName="silent" Count="2" />
+  <row Id="253" TagName="scrobbling" Count="1" ExcerptPostId="1478" WikiPostId="1477" />
+  <row Id="256" TagName="7.8" Count="39" ExcerptPostId="1470" WikiPostId="1469" />
+  <row Id="257" TagName="onenote" Count="21" ExcerptPostId="1472" WikiPostId="1471" />
+  <row Id="259" TagName="micro-sd" Count="35" ExcerptPostId="3792" WikiPostId="3791" />
+  <row Id="260" TagName="skype" Count="18" />
+  <row Id="264" TagName="icons" Count="6" />
+  <row Id="268" TagName="error" Count="16" />
+  <row Id="269" TagName="alert" Count="4" />
+  <row Id="270" TagName="live-tiles" Count="12" ExcerptPostId="2512" WikiPostId="2511" />
+  <row Id="271" TagName="sound" Count="23" />
+  <row Id="273" TagName="foursquare" Count="4" />
+  <row Id="276" TagName="nokia-lumia-820" Count="25" />
+  <row Id="278" TagName="synchronization" Count="5" />
+  <row Id="280" TagName="windows-8" Count="23" ExcerptPostId="2941" WikiPostId="2940" />
+  <row Id="283" TagName="pc" Count="9" />
+  <row Id="284" TagName="app-update" Count="20" ExcerptPostId="1842" WikiPostId="1841" />
+  <row Id="285" TagName="pdf" Count="18" />
+  <row Id="286" TagName="nfc" Count="9" ExcerptPostId="3335" WikiPostId="3334" />
+  <row Id="291" TagName="ftp" Count="2" ExcerptPostId="4062" WikiPostId="4061" />
+  <row Id="295" TagName="beta" Count="3" ExcerptPostId="2510" WikiPostId="2509" />
+  <row Id="296" TagName="amber-update" Count="6" ExcerptPostId="2367" WikiPostId="2366" />
+  <row Id="297" TagName="gdr-2" Count="3" ExcerptPostId="2498" WikiPostId="2497" />
+  <row Id="298" TagName="nokia-lumia-620" Count="20" ExcerptPostId="2365" WikiPostId="2364" />
+  <row Id="302" TagName="reset" Count="26" ExcerptPostId="3325" WikiPostId="3324" />
+  <row Id="303" TagName="spinning-gears" Count="1" ExcerptPostId="2500" WikiPostId="2499" />
+  <row Id="304" TagName="gdr-3" Count="6" ExcerptPostId="2496" WikiPostId="2495" />
+  <row Id="305" TagName="call-sms-filter" Count="19" ExcerptPostId="2504" WikiPostId="2503" />
+  <row Id="311" TagName="nokia-lumia-1020" Count="58" ExcerptPostId="4084" WikiPostId="4083" />
+  <row Id="313" TagName="system-apps" Count="23" />
+  <row Id="314" TagName="screen" Count="24" />
+  <row Id="315" TagName="datasense" Count="7" ExcerptPostId="2764" WikiPostId="2763" />
+  <row Id="316" TagName="windows-mobile" Count="21" ExcerptPostId="3805" WikiPostId="3804" />
+  <row Id="317" TagName="lumia-black-update" Count="11" ExcerptPostId="2792" WikiPostId="2791" />
+  <row Id="319" TagName="accessibility" Count="5" ExcerptPostId="3159" WikiPostId="3158" />
+  <row Id="320" TagName="parental-control" Count="22" ExcerptPostId="2927" WikiPostId="2926" />
+  <row Id="322" TagName="signal" Count="3" />
+  <row Id="324" TagName="lumia-amber" Count="2" ExcerptPostId="3161" WikiPostId="3160" />
+  <row Id="325" TagName="word" Count="6" ExcerptPostId="4060" WikiPostId="4059" />
+  <row Id="330" TagName="samsung-ativ-s" Count="5" />
+  <row Id="332" TagName="onedrive" Count="97" ExcerptPostId="3319" WikiPostId="3318" />
+  <row Id="333" TagName="push-notifications" Count="6" />
+  <row Id="334" TagName="touch" Count="12" ExcerptPostId="12780" WikiPostId="12779" />
+  <row Id="336" TagName="nokia-lumia-720" Count="13" />
+  <row Id="339" TagName="sd-card" Count="26" />
+  <row Id="340" TagName="speech" Count="12" ExcerptPostId="11192" WikiPostId="11191" />
+  <row Id="341" TagName="browser" Count="12" ExcerptPostId="11196" WikiPostId="11195" />
+  <row Id="342" TagName="glance" Count="12" ExcerptPostId="3739" WikiPostId="3738" />
+  <row Id="343" TagName="htc-8s" Count="2" />
+  <row Id="344" TagName="8.1" Count="452" ExcerptPostId="3547" WikiPostId="3546" />
+  <row Id="345" TagName="sim" Count="11" ExcerptPostId="4064" WikiPostId="4063" />
+  <row Id="346" TagName="wpdm" Count="1" ExcerptPostId="3509" WikiPostId="3508" />
+  <row Id="348" TagName="cortana" Count="68" ExcerptPostId="3537" WikiPostId="3536" />
+  <row Id="349" TagName="project-my-screen" Count="5" ExcerptPostId="3576" WikiPostId="3575" />
+  <row Id="351" TagName="lumia-520" Count="112" ExcerptPostId="4086" WikiPostId="4085" />
+  <row Id="352" TagName="wordflow" Count="5" ExcerptPostId="3595" WikiPostId="3594" />
+  <row Id="356" TagName="accessories" Count="4" ExcerptPostId="3687" WikiPostId="3686" />
+  <row Id="357" TagName="samsung-focus" Count="2" />
+  <row Id="358" TagName="local-scout" Count="1" ExcerptPostId="3689" WikiPostId="3688" />
+  <row Id="359" TagName="7.x" Count="46" ExcerptPostId="3696" WikiPostId="3695" />
+  <row Id="360" TagName="calls" Count="36" ExcerptPostId="3691" WikiPostId="3690" />
+  <row Id="362" TagName="driving-mode" Count="2" ExcerptPostId="13285" WikiPostId="13284" />
+  <row Id="363" TagName="action-center" Count="12" ExcerptPostId="3721" WikiPostId="3720" />
+  <row Id="367" TagName="nokia-lumia-525" Count="24" />
+  <row Id="369" TagName="side-loading" Count="7" ExcerptPostId="4078" WikiPostId="4077" />
+  <row Id="370" TagName="storage-check" Count="3" />
+  <row Id="371" TagName="windows-7" Count="7" ExcerptPostId="4076" WikiPostId="4075" />
+  <row Id="372" TagName="lumia-925" Count="33" />
+  <row Id="373" TagName="chat" Count="3" ExcerptPostId="4074" WikiPostId="4073" />
+  <row Id="375" TagName="instagram" Count="7" ExcerptPostId="4072" WikiPostId="4071" />
+  <row Id="378" TagName="office-lens" Count="2" ExcerptPostId="4068" WikiPostId="4067" />
+  <row Id="382" TagName="screenshot" Count="5" ExcerptPostId="4066" WikiPostId="4065" />
+  <row Id="384" TagName="certificate" Count="10" ExcerptPostId="4082" WikiPostId="4081" />
+  <row Id="390" TagName="app-review" Count="2" ExcerptPostId="12700" WikiPostId="12699" />
+  <row Id="394" TagName="printer" Count="4" />
+  <row Id="421" TagName="nokia-lumia-630" Count="29" />
+  <row Id="1427" TagName="tap-to-pay" Count="3" ExcerptPostId="5262" WikiPostId="5261" />
+  <row Id="1438" TagName="8.1-update-1" Count="39" />
+  <row Id="1439" TagName="nokia-lumia-930" Count="39" ExcerptPostId="16230" WikiPostId="16229" />
+  <row Id="1440" TagName="apps-corner" Count="7" ExcerptPostId="12895" WikiPostId="12894" />
+  <row Id="1447" TagName="radio" Count="6" />
+  <row Id="1448" TagName="office" Count="6" />
+  <row Id="1449" TagName="treasure-tag" Count="2" />
+  <row Id="1450" TagName="lumia-cyan-update" Count="4" />
+  <row Id="1452" TagName="developer-preview" Count="15" ExcerptPostId="5564" WikiPostId="5563" />
+  <row Id="1457" TagName="family-room" Count="2" />
+  <row Id="1458" TagName="narrator" Count="6" />
+  <row Id="1460" TagName="nokia-lumia-625" Count="9" />
+  <row Id="1462" TagName="exif" Count="2" ExcerptPostId="5994" WikiPostId="5993" />
+  <row Id="1463" TagName="sharing" Count="8" />
+  <row Id="1465" TagName="mms" Count="8" />
+  <row Id="1469" TagName="nokia-lumia-1520" Count="12" />
+  <row Id="1471" TagName="nokia-lumia-730" Count="20" />
+  <row Id="1472" TagName="download-mode" Count="2" ExcerptPostId="14179" WikiPostId="14178" />
+  <row Id="1473" TagName="lumia-denim-update" Count="25" />
+  <row Id="1475" TagName="vpn" Count="8" ExcerptPostId="8863" WikiPostId="8862" />
+  <row Id="1476" TagName="pin" Count="8" />
+  <row Id="1477" TagName="nokia-lumia-1320" Count="11" />
+  <row Id="1481" TagName="battery-saver" Count="9" ExcerptPostId="12331" WikiPostId="12330" />
+  <row Id="1482" TagName="lumia-icon" Count="4" />
+  <row Id="1484" TagName="windows-10" Count="29" ExcerptPostId="8659" WikiPostId="8658" />
+  <row Id="1486" TagName="nokia-lumia-535" Count="77" ExcerptPostId="18196" WikiPostId="18195" />
+  <row Id="1487" TagName="lumia-635" Count="15" />
+  <row Id="1488" TagName="nokia-lumia-530" Count="5" />
+  <row Id="1489" TagName="geolocation" Count="4" />
+  <row Id="1492" TagName="family-safety" Count="3" />
+  <row Id="1494" TagName="nokia-lumia-735" Count="7" />
+  <row Id="1497" TagName="nokia-lumia-830" Count="11" />
+  <row Id="1501" TagName="viber" Count="5" />
+  <row Id="1502" TagName="quiet-hours" Count="5" />
+  <row Id="1505" TagName="lumia-denim" Count="4" />
+  <row Id="1510" TagName="insider-preview" Count="115" ExcerptPostId="9772" WikiPostId="9771" />
+  <row Id="1514" TagName="uc-browser" Count="5" />
+  <row Id="1515" TagName="recovery-tool" Count="17" ExcerptPostId="9798" WikiPostId="9797" />
+  <row Id="1517" TagName="microsoft-band" Count="5" />
+  <row Id="1518" TagName="performance" Count="3" />
+  <row Id="1522" TagName="audio-recording" Count="3" ExcerptPostId="16916" WikiPostId="16915" />
+  <row Id="1528" TagName="blu-win-hd" Count="15" />
+  <row Id="1529" TagName="lumia-640-xl" Count="33" ExcerptPostId="11606" WikiPostId="11605" />
+  <row Id="1530" TagName="continuum" Count="6" ExcerptPostId="11638" WikiPostId="11637" />
+  <row Id="1535" TagName="windows-10-mobile" Count="486" ExcerptPostId="12037" WikiPostId="12036" />
+  <row Id="1536" TagName="music-search" Count="2" />
+  <row Id="1539" TagName="lumia-950-xl" Count="19" />
+  <row Id="1541" TagName="dual-sim" Count="5" ExcerptPostId="12109" WikiPostId="12108" />
+  <row Id="1542" TagName="windows-hello" Count="1" ExcerptPostId="12314" WikiPostId="12313" />
+  <row Id="1543" TagName="lumia-950" Count="28" />
+  <row Id="1549" TagName="downloads" Count="15" />
+  <row Id="1552" TagName="yahoo" Count="5" />
+  <row Id="1553" TagName="nokia-lumia-610" Count="7" />
+  <row Id="1554" TagName="bing-vision" Count="2" ExcerptPostId="12683" WikiPostId="12682" />
+  <row Id="1555" TagName="groove" Count="8" ExcerptPostId="14182" WikiPostId="14181" />
+  <row Id="1556" TagName="lumia-435" Count="3" />
+  <row Id="1557" TagName="feedback" Count="5" ExcerptPostId="14721" WikiPostId="14720" />
+  <row Id="1560" TagName="mixradio" Count="1" ExcerptPostId="12685" WikiPostId="12684" />
+  <row Id="1561" TagName="8.x" Count="3" />
+  <row Id="1563" TagName="lumia-550" Count="14" />
+  <row Id="1564" TagName="headset" Count="7" />
+  <row Id="1568" TagName="microsoft-edge" Count="14" ExcerptPostId="12841" WikiPostId="12840" />
+  <row Id="1570" TagName="navigation-key" Count="7" ExcerptPostId="13264" WikiPostId="13263" />
+  <row Id="1573" TagName="linux" Count="1" ExcerptPostId="13268" WikiPostId="13267" />
+  <row Id="1575" TagName="microsoft-health" Count="1" ExcerptPostId="14173" WikiPostId="14172" />
+  <row Id="1577" TagName="office-365" Count="3" />
+  <row Id="1578" TagName="lumia" Count="351" />
+  <row Id="1581" TagName="redstone-builds" Count="6" />
+  <row Id="1582" TagName="unsupported-phones" Count="4" />
+  <row Id="1583" TagName="lumia-540" Count="10" />
+  <row Id="1586" TagName="recovery" Count="6" />
+  <row Id="1588" TagName="blink" Count="1" ExcerptPostId="14177" WikiPostId="14176" />
+  <row Id="1590" TagName="windows-10-upgrade" Count="13" />
+  <row Id="1591" TagName="regional-settings" Count="2" />
+  <row Id="1593" TagName="equalizer" Count="2" />
+  <row Id="1594" TagName="hard-reset" Count="5" />
+  <row Id="1595" TagName="lumia-650" Count="9" />
+  <row Id="1596" TagName="file-explorer" Count="3" ExcerptPostId="13736" WikiPostId="13735" />
+  <row Id="1598" TagName="flight-mode" Count="2" />
+  <row Id="1599" TagName="lumia-640" Count="20" />
+  <row Id="1600" TagName="hdr" Count="2" />
+  <row Id="1606" TagName="crash" Count="8" />
+  <row Id="1611" TagName="apps-for-website" Count="1" ExcerptPostId="14091" WikiPostId="14090" />
+  <row Id="1614" TagName="opera-mini" Count="1" ExcerptPostId="14374" WikiPostId="14373" />
+  <row Id="1616" TagName="feedback-hub" Count="1" ExcerptPostId="14723" WikiPostId="14722" />
+  <row Id="1621" TagName="wallpaper" Count="2" />
+  <row Id="1629" TagName="sql-server" Count="1" ExcerptPostId="15153" WikiPostId="15152" />
+  <row Id="1634" TagName="lumia-630" Count="3" />
+  <row Id="1638" TagName="2fa" Count="1" ExcerptPostId="16374" WikiPostId="16373" />
+  <row Id="1646" TagName="untagged" Count="1" ExcerptPostId="16889" WikiPostId="16888" />
+  <row Id="1648" TagName="lumia-535" Count="3" />
 </tags>
