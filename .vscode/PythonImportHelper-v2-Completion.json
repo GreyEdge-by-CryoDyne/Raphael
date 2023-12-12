@@ -1,14 +1,5 @@
 [
     {
-        "label": "requests",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "requests",
-        "description": "requests",
-        "detail": "requests",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -18,12 +9,21 @@
         "documentation": {}
     },
     {
-        "label": "json",
+        "label": "zipfile",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
+        "importPath": "zipfile",
+        "description": "zipfile",
+        "detail": "zipfile",
+        "documentation": {}
+    },
+    {
+        "label": "py7zr",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "py7zr",
+        "description": "py7zr",
+        "detail": "py7zr",
         "documentation": {}
     },
     {
@@ -36,12 +36,11 @@
         "documentation": {}
     },
     {
-        "label": "unittest",
-        "kind": 6,
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
         "isExtraImport": true,
-        "importPath": "unittest",
-        "description": "unittest",
-        "detail": "unittest",
+        "detail": "tqdm",
         "documentation": {}
     },
     {
@@ -51,81 +50,6 @@
         "importPath": "shutil",
         "description": "shutil",
         "detail": "shutil",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "magic",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "magic",
-        "description": "magic",
-        "detail": "magic",
-        "documentation": {}
-    },
-    {
-        "label": "EasyID3",
-        "importPath": "mutagen.easyid3",
-        "description": "mutagen.easyid3",
-        "isExtraImport": true,
-        "detail": "mutagen.easyid3",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "TAGS",
-        "importPath": "PIL.ExifTags",
-        "description": "PIL.ExifTags",
-        "isExtraImport": true,
-        "detail": "PIL.ExifTags",
-        "documentation": {}
-    },
-    {
-        "label": "PyPDF2",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "PyPDF2",
-        "description": "PyPDF2",
-        "detail": "PyPDF2",
-        "documentation": {}
-    },
-    {
-        "label": "VideoFileClip",
-        "importPath": "moviepy.editor",
-        "description": "moviepy.editor",
-        "isExtraImport": true,
-        "detail": "moviepy.editor",
-        "documentation": {}
-    },
-    {
-        "label": "zipfile",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "zipfile",
-        "description": "zipfile",
-        "detail": "zipfile",
         "documentation": {}
     },
     {
@@ -144,24 +68,6 @@
         "importPath": "rarfile",
         "description": "rarfile",
         "detail": "rarfile",
-        "documentation": {}
-    },
-    {
-        "label": "psutil",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "psutil",
-        "description": "psutil",
-        "detail": "psutil",
-        "documentation": {}
-    },
-    {
-        "label": "subprocess",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "subprocess",
-        "description": "subprocess",
-        "detail": "subprocess",
         "documentation": {}
     },
     {
@@ -190,6 +96,15 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "tokenize",
         "importPath": "utils.preprocessing",
         "description": "utils.preprocessing",
@@ -206,336 +121,57 @@
         "documentation": {}
     },
     {
-        "label": "call_api",
+        "label": "decompress_zip",
         "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "peekOfCode": "def call_api(file_path):\n    with open(file_path, 'rb') as file:\n        response = requests.post(api_url, files={'file': file})\n        if response.status_code == 200:\n            logging.info(f\"API call successful for {file_path}\")\n            return json.loads(response.content)\n        else:\n            logging.error(f\"API call failed for {file_path}: {response.content}\")\n            return None\ndef integrate_with_api():",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
+        "importPath": "IntegrationEngine.Scripts.decompress_files",
+        "description": "IntegrationEngine.Scripts.decompress_files",
+        "peekOfCode": "def decompress_zip(file_path, destination, progress_bar):\n    with zipfile.ZipFile(file_path, \"r\") as zip_ref:\n        for file in tqdm(\n            iterable=zip_ref.namelist(),\n            total=len(zip_ref.namelist()),\n            desc=f\"Decompressing ZIP: {os.path.basename(file_path)}\",\n            unit=\"file\",\n            leave=False,\n        ):\n            zip_ref.extract(member=file, path=destination)",
+        "detail": "IntegrationEngine.Scripts.decompress_files",
         "documentation": {}
     },
     {
-        "label": "integrate_with_api",
+        "label": "decompress_7z",
         "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "peekOfCode": "def integrate_with_api():\n    for file in os.listdir(data_dir):\n        file_path = os.path.join(data_dir, file)\n        api_response = call_api(file_path)\n        # Handle the API response as needed\nif __name__ == '__main__':\n    integrate_with_api()",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
+        "importPath": "IntegrationEngine.Scripts.decompress_files",
+        "description": "IntegrationEngine.Scripts.decompress_files",
+        "peekOfCode": "def decompress_7z(file_path, destination, progress_bar):\n    with py7zr.SevenZipFile(file_path, mode=\"r\") as z:\n        for file in tqdm(\n            iterable=z.getnames(),\n            total=len(z.getnames()),\n            desc=f\"Decompressing 7Z: {os.path.basename(file_path)}\",\n            unit=\"file\",\n            leave=False,\n        ):\n            z.extract(targets=[file], path=destination)",
+        "detail": "IntegrationEngine.Scripts.decompress_files",
         "documentation": {}
     },
     {
-        "label": "api_url",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "peekOfCode": "api_url = 'https://example.com/api'  # Replace with the actual API URL\ndata_dir = 'MindMatrix/DataOrganizerAI/TransformedData'\ndef call_api(file_path):\n    with open(file_path, 'rb') as file:\n        response = requests.post(api_url, files={'file': file})\n        if response.status_code == 200:\n            logging.info(f\"API call successful for {file_path}\")\n            return json.loads(response.content)\n        else:\n            logging.error(f\"API call failed for {file_path}: {response.content}\")",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "documentation": {}
-    },
-    {
-        "label": "data_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "peekOfCode": "data_dir = 'MindMatrix/DataOrganizerAI/TransformedData'\ndef call_api(file_path):\n    with open(file_path, 'rb') as file:\n        response = requests.post(api_url, files={'file': file})\n        if response.status_code == 200:\n            logging.info(f\"API call successful for {file_path}\")\n            return json.loads(response.content)\n        else:\n            logging.error(f\"API call failed for {file_path}: {response.content}\")\n            return None",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.API Integration Script:.api_integration",
-        "documentation": {}
-    },
-    {
-        "label": "TestDataProcessing",
-        "kind": 6,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Automated Testing Scripts:.automated_testing",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Automated Testing Scripts:.automated_testing",
-        "peekOfCode": "class TestDataProcessing(unittest.TestCase):\n    def test_file_sorting(self):\n        # Implement test logic for file sorting\n        self.assertTrue(os.path.exists('MindMatrix/DataOrganizerAI/SortedFiles'))\n    def test_data_parsing(self):\n        # Implement test logic for data parsing\n        self.assertTrue(os.path.exists('MindMatrix/DataOrganizerAI/ParsedData'))\n    # Add more tests for other functionalities as needed\nif __name__ == '__main__':\n    unittest.main()",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Automated Testing Scripts:.automated_testing",
-        "documentation": {}
-    },
-    {
-        "label": "backup_data",
+        "label": "decompress_file",
         "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Backup and Recovery Script:.backup_recovery",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Backup and Recovery Script:.backup_recovery",
-        "peekOfCode": "def backup_data():\n    timestamp = datetime.now().strftime('%Y%m%d%H%M%S')\n    backup_path = os.path.join(backup_dir, f'backup_{timestamp}')\n    try:\n        shutil.copytree(data_dir, backup_path)\n        logging.info(f\"Backup created successfully at {backup_path}\")\n    except Exception as e:\n        logging.error(f\"Backup failed: {e}\")\nif __name__ == '__main__':\n    backup_data()",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Backup and Recovery Script:.backup_recovery",
+        "importPath": "IntegrationEngine.Scripts.decompress_files",
+        "description": "IntegrationEngine.Scripts.decompress_files",
+        "peekOfCode": "def decompress_file(file_path, destination):\n    try:\n        file_extension = os.path.splitext(file_path)[1]\n        with tqdm(total=1, desc=f\"Processing {os.path.basename(file_path)}\") as pbar:\n            if file_extension == \".zip\":\n                decompress_zip(file_path, destination, pbar)\n            elif file_extension == \".7z\":\n                decompress_7z(file_path, destination, pbar)\n        logging.info(f\"Decompressed: {file_path}\")\n    except Exception as e:",
+        "detail": "IntegrationEngine.Scripts.decompress_files",
         "documentation": {}
     },
     {
-        "label": "data_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Backup and Recovery Script:.backup_recovery",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Backup and Recovery Script:.backup_recovery",
-        "peekOfCode": "data_dir = 'MindMatrix/DataOrganizerAI'\nbackup_dir = 'MindMatrix/DataOrganizerAI/Backups'\nos.makedirs(backup_dir, exist_ok=True)\ndef backup_data():\n    timestamp = datetime.now().strftime('%Y%m%d%H%M%S')\n    backup_path = os.path.join(backup_dir, f'backup_{timestamp}')\n    try:\n        shutil.copytree(data_dir, backup_path)\n        logging.info(f\"Backup created successfully at {backup_path}\")\n    except Exception as e:",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Backup and Recovery Script:.backup_recovery",
-        "documentation": {}
-    },
-    {
-        "label": "backup_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Backup and Recovery Script:.backup_recovery",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Backup and Recovery Script:.backup_recovery",
-        "peekOfCode": "backup_dir = 'MindMatrix/DataOrganizerAI/Backups'\nos.makedirs(backup_dir, exist_ok=True)\ndef backup_data():\n    timestamp = datetime.now().strftime('%Y%m%d%H%M%S')\n    backup_path = os.path.join(backup_dir, f'backup_{timestamp}')\n    try:\n        shutil.copytree(data_dir, backup_path)\n        logging.info(f\"Backup created successfully at {backup_path}\")\n    except Exception as e:\n        logging.error(f\"Backup failed: {e}\")",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Backup and Recovery Script:.backup_recovery",
-        "documentation": {}
-    },
-    {
-        "label": "transform_data",
+        "label": "process_input_directory",
         "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "peekOfCode": "def transform_data(file_path):\n    # Example transformation logic\n    # Modify this function based on specific transformation needs\n    try:\n        with open(file_path, 'r') as file:\n            data = file.read()\n            # Apply some transformation to the data\n            transformed_data = data.upper()  # Example: converting text to uppercase\n        transformed_file_path = os.path.join(transformed_dir, os.path.basename(file_path))\n        with open(transformed_file_path, 'w') as file:",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
+        "importPath": "IntegrationEngine.Scripts.decompress_files",
+        "description": "IntegrationEngine.Scripts.decompress_files",
+        "peekOfCode": "def process_input_directory():\n    for filename in os.listdir(input_dir):\n        file_path = os.path.join(input_dir, filename)\n        if filename.endswith(\".zip\") or filename.endswith(\".7z\"):\n            decompress_file(file_path, processing_dir)\nif __name__ == \"__main__\":\n    process_input_directory()",
+        "detail": "IntegrationEngine.Scripts.decompress_files",
         "documentation": {}
     },
     {
-        "label": "process_files",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "peekOfCode": "def process_files():\n    for file in os.listdir(source_dir):\n        file_path = os.path.join(source_dir, file)\n        transform_data(file_path)\nif __name__ == '__main__':\n    process_files()",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "documentation": {}
-    },
-    {
-        "label": "source_dir",
+        "label": "input_dir",
         "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "peekOfCode": "source_dir = 'MindMatrix/DataOrganizerAI/ParsedData'\ntransformed_dir = 'MindMatrix/DataOrganizerAI/TransformedData'\nos.makedirs(transformed_dir, exist_ok=True)\ndef transform_data(file_path):\n    # Example transformation logic\n    # Modify this function based on specific transformation needs\n    try:\n        with open(file_path, 'r') as file:\n            data = file.read()\n            # Apply some transformation to the data",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
+        "importPath": "IntegrationEngine.Scripts.decompress_files",
+        "description": "IntegrationEngine.Scripts.decompress_files",
+        "peekOfCode": "input_dir = \"IntegrationEngine/Input\"\nprocessing_dir = \"IntegrationEngine/Processing\"\ndef decompress_zip(file_path, destination, progress_bar):\n    with zipfile.ZipFile(file_path, \"r\") as zip_ref:\n        for file in tqdm(\n            iterable=zip_ref.namelist(),\n            total=len(zip_ref.namelist()),\n            desc=f\"Decompressing ZIP: {os.path.basename(file_path)}\",\n            unit=\"file\",\n            leave=False,",
+        "detail": "IntegrationEngine.Scripts.decompress_files",
         "documentation": {}
     },
     {
-        "label": "transformed_dir",
+        "label": "processing_dir",
         "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "peekOfCode": "transformed_dir = 'MindMatrix/DataOrganizerAI/TransformedData'\nos.makedirs(transformed_dir, exist_ok=True)\ndef transform_data(file_path):\n    # Example transformation logic\n    # Modify this function based on specific transformation needs\n    try:\n        with open(file_path, 'r') as file:\n            data = file.read()\n            # Apply some transformation to the data\n            transformed_data = data.upper()  # Example: converting text to uppercase",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Data Transformation Script:.data_transformation",
-        "documentation": {}
-    },
-    {
-        "label": "is_valid_file",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "peekOfCode": "def is_valid_file(file_path):\n    try:\n        file_type = magic.from_file(file_path, mime=True)\n        return file_type.startswith('image/') or file_type.startswith('audio/') or \\\n               file_type.startswith('video/') or file_type.startswith('text/') or \\\n               file_type == 'application/pdf'\n    except Exception as e:\n        logging.error(f\"Validation failed for {file_path}: {e}\")\n        return False\ndef validate_data():",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "documentation": {}
-    },
-    {
-        "label": "validate_data",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "peekOfCode": "def validate_data():\n    for file in os.listdir(data_dir):\n        file_path = os.path.join(data_dir, file)\n        if is_valid_file(file_path):\n            shutil.move(file_path, valid_data_dir)\n        else:\n            shutil.move(file_path, invalid_data_dir)\nif __name__ == '__main__':\n    validate_data()",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "documentation": {}
-    },
-    {
-        "label": "data_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "peekOfCode": "data_dir = 'MindMatrix/DataOrganizerAI/DataDumps'\nvalid_data_dir = 'MindMatrix/DataOrganizerAI/ValidData'\ninvalid_data_dir = 'MindMatrix/DataOrganizerAI/InvalidData'\nos.makedirs(valid_data_dir, exist_ok=True)\nos.makedirs(invalid_data_dir, exist_ok=True)\ndef is_valid_file(file_path):\n    try:\n        file_type = magic.from_file(file_path, mime=True)\n        return file_type.startswith('image/') or file_type.startswith('audio/') or \\\n               file_type.startswith('video/') or file_type.startswith('text/') or \\",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "documentation": {}
-    },
-    {
-        "label": "valid_data_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "peekOfCode": "valid_data_dir = 'MindMatrix/DataOrganizerAI/ValidData'\ninvalid_data_dir = 'MindMatrix/DataOrganizerAI/InvalidData'\nos.makedirs(valid_data_dir, exist_ok=True)\nos.makedirs(invalid_data_dir, exist_ok=True)\ndef is_valid_file(file_path):\n    try:\n        file_type = magic.from_file(file_path, mime=True)\n        return file_type.startswith('image/') or file_type.startswith('audio/') or \\\n               file_type.startswith('video/') or file_type.startswith('text/') or \\\n               file_type == 'application/pdf'",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "documentation": {}
-    },
-    {
-        "label": "invalid_data_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "peekOfCode": "invalid_data_dir = 'MindMatrix/DataOrganizerAI/InvalidData'\nos.makedirs(valid_data_dir, exist_ok=True)\nos.makedirs(invalid_data_dir, exist_ok=True)\ndef is_valid_file(file_path):\n    try:\n        file_type = magic.from_file(file_path, mime=True)\n        return file_type.startswith('image/') or file_type.startswith('audio/') or \\\n               file_type.startswith('video/') or file_type.startswith('text/') or \\\n               file_type == 'application/pdf'\n    except Exception as e:",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Data Validation Script:.data_validation",
-        "documentation": {}
-    },
-    {
-        "label": "extract_audio_metadata",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "peekOfCode": "def extract_audio_metadata(file_path):\n    try:\n        audio_metadata = EasyID3(file_path)\n        return {key: audio_metadata[key][0] for key in audio_metadata}\n    except Exception as e:\n        logging.error(f\"Metadata extraction failed for {file_path}: {e}\")\n        return None\ndef process_audio_files():\n    for file in os.listdir(audio_dir):\n        if file.lower().endswith(('.mp3', '.wav')):  # Add other audio formats as needed",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "process_audio_files",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "peekOfCode": "def process_audio_files():\n    for file in os.listdir(audio_dir):\n        if file.lower().endswith(('.mp3', '.wav')):  # Add other audio formats as needed\n            file_path = os.path.join(audio_dir, file)\n            metadata = extract_audio_metadata(file_path)\n            if metadata:\n                metadata_file = os.path.join(metadata_dir, f\"{os.path.splitext(file)[0]}_metadata.txt\")\n                with open(metadata_file, 'w') as f:\n                    for key, value in metadata.items():\n                        f.write(f\"{key}: {value}\\n\")",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "audio_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "peekOfCode": "audio_dir = 'MindMatrix/DataOrganizerAI/SortedFiles/Audio'\nmetadata_dir = 'MindMatrix/DataOrganizerAI/ParsedData/AudioMetadata'\nos.makedirs(metadata_dir, exist_ok=True)\ndef extract_audio_metadata(file_path):\n    try:\n        audio_metadata = EasyID3(file_path)\n        return {key: audio_metadata[key][0] for key in audio_metadata}\n    except Exception as e:\n        logging.error(f\"Metadata extraction failed for {file_path}: {e}\")\n        return None",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "metadata_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "peekOfCode": "metadata_dir = 'MindMatrix/DataOrganizerAI/ParsedData/AudioMetadata'\nos.makedirs(metadata_dir, exist_ok=True)\ndef extract_audio_metadata(file_path):\n    try:\n        audio_metadata = EasyID3(file_path)\n        return {key: audio_metadata[key][0] for key in audio_metadata}\n    except Exception as e:\n        logging.error(f\"Metadata extraction failed for {file_path}: {e}\")\n        return None\ndef process_audio_files():",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.audio_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "extract_image_metadata",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "peekOfCode": "def extract_image_metadata(file_path):\n    try:\n        image = Image.open(file_path)\n        exif_data = image._getexif()\n        return {TAGS.get(key): exif_data[key] for key in exif_data} if exif_data else {}\n    except Exception as e:\n        logging.error(f\"Metadata extraction failed for {file_path}: {e}\")\n        return None\ndef process_image_files():\n    for file in os.listdir(image_dir):",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "process_image_files",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "peekOfCode": "def process_image_files():\n    for file in os.listdir(image_dir):\n        if file.lower().endswith(('.jpg', '.jpeg', '.png')):  # Add other image formats as needed\n            file_path = os.path.join(image_dir, file)\n            metadata = extract_image_metadata(file_path)\n            if metadata:\n                metadata_file = os.path.join(metadata_dir, f\"{os.path.splitext(file)[0]}_metadata.txt\")\n                with open(metadata_file, 'w') as f:\n                    for key, value in metadata.items():\n                        f.write(f\"{key}: {value}\\n\")",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "image_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "peekOfCode": "image_dir = 'MindMatrix/DataOrganizerAI/SortedFiles/Images'\nmetadata_dir = 'MindMatrix/DataOrganizerAI/ParsedData/ImageMetadata'\nos.makedirs(metadata_dir, exist_ok=True)\ndef extract_image_metadata(file_path):\n    try:\n        image = Image.open(file_path)\n        exif_data = image._getexif()\n        return {TAGS.get(key): exif_data[key] for key in exif_data} if exif_data else {}\n    except Exception as e:\n        logging.error(f\"Metadata extraction failed for {file_path}: {e}\")",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "metadata_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "peekOfCode": "metadata_dir = 'MindMatrix/DataOrganizerAI/ParsedData/ImageMetadata'\nos.makedirs(metadata_dir, exist_ok=True)\ndef extract_image_metadata(file_path):\n    try:\n        image = Image.open(file_path)\n        exif_data = image._getexif()\n        return {TAGS.get(key): exif_data[key] for key in exif_data} if exif_data else {}\n    except Exception as e:\n        logging.error(f\"Metadata extraction failed for {file_path}: {e}\")\n        return None",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.image_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "extract_text_from_pdf",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "peekOfCode": "def extract_text_from_pdf(file_path):\n    try:\n        with open(file_path, 'rb') as file:\n            reader = PyPDF2.PdfFileReader(file)\n            text = ''\n            for page_num in range(reader.numPages):\n                text += reader.getPage(page_num).extractText()\n            return text\n    except Exception as e:\n        logging.error(f\"Text extraction failed for {file_path}: {e}\")",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "process_pdf_files",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "peekOfCode": "def process_pdf_files():\n    for file in os.listdir(pdf_dir):\n        if file.lower().endswith('.pdf'):\n            file_path = os.path.join(pdf_dir, file)\n            text = extract_text_from_pdf(file_path)\n            if text:\n                text_file = os.path.join(text_dir, f\"{os.path.splitext(file)[0]}.txt\")\n                with open(text_file, 'w') as f:\n                    f.write(text)\nif __name__ == '__main__':",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "pdf_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "peekOfCode": "pdf_dir = 'MindMatrix/DataOrganizerAI/SortedFiles/PDFs'\ntext_dir = 'MindMatrix/DataOrganizerAI/ParsedData/TextData'\nos.makedirs(text_dir, exist_ok=True)\ndef extract_text_from_pdf(file_path):\n    try:\n        with open(file_path, 'rb') as file:\n            reader = PyPDF2.PdfFileReader(file)\n            text = ''\n            for page_num in range(reader.numPages):\n                text += reader.getPage(page_num).extractText()",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "text_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "peekOfCode": "text_dir = 'MindMatrix/DataOrganizerAI/ParsedData/TextData'\nos.makedirs(text_dir, exist_ok=True)\ndef extract_text_from_pdf(file_path):\n    try:\n        with open(file_path, 'rb') as file:\n            reader = PyPDF2.PdfFileReader(file)\n            text = ''\n            for page_num in range(reader.numPages):\n                text += reader.getPage(page_num).extractText()\n            return text",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.pdf_text_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "parse_text_file",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "peekOfCode": "def parse_text_file(file_path):\n    try:\n        with open(file_path, 'r') as file:\n            return file.read()\n    except Exception as e:\n        logging.error(f\"Text parsing failed for {file_path}: {e}\")\n        return None\ndef process_text_files():\n    for file in os.listdir(text_dir):\n        if file.lower().endswith(('.txt', '.docx')):  # Add other text formats as needed",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "documentation": {}
-    },
-    {
-        "label": "process_text_files",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "peekOfCode": "def process_text_files():\n    for file in os.listdir(text_dir):\n        if file.lower().endswith(('.txt', '.docx')):  # Add other text formats as needed\n            file_path = os.path.join(text_dir, file)\n            text = parse_text_file(file_path)\n            if text:\n                parsed_file = os.path.join(parsed_dir, f\"{os.path.splitext(file)[0]}_parsed.txt\")\n                with open(parsed_file, 'w') as f:\n                    f.write(text)\nif __name__ == '__main__':",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "documentation": {}
-    },
-    {
-        "label": "text_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "peekOfCode": "text_dir = 'MindMatrix/DataOrganizerAI/SortedFiles/Documents'\nparsed_dir = 'MindMatrix/DataOrganizerAI/ParsedData/TextData'\nos.makedirs(parsed_dir, exist_ok=True)\ndef parse_text_file(file_path):\n    try:\n        with open(file_path, 'r') as file:\n            return file.read()\n    except Exception as e:\n        logging.error(f\"Text parsing failed for {file_path}: {e}\")\n        return None",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "documentation": {}
-    },
-    {
-        "label": "parsed_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "peekOfCode": "parsed_dir = 'MindMatrix/DataOrganizerAI/ParsedData/TextData'\nos.makedirs(parsed_dir, exist_ok=True)\ndef parse_text_file(file_path):\n    try:\n        with open(file_path, 'r') as file:\n            return file.read()\n    except Exception as e:\n        logging.error(f\"Text parsing failed for {file_path}: {e}\")\n        return None\ndef process_text_files():",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.text_parser",
-        "documentation": {}
-    },
-    {
-        "label": "extract_video_metadata",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "peekOfCode": "def extract_video_metadata(file_path):\n    try:\n        clip = VideoFileClip(file_path)\n        return {\n            \"Duration\": clip.duration,\n            \"FPS\": clip.fps,\n            \"Resolution\": clip.size\n        }\n    except Exception as e:\n        logging.error(f\"Metadata extraction failed for {file_path}: {e}\")",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "process_video_files",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "peekOfCode": "def process_video_files():\n    for file in os.listdir(video_dir):\n        if file.lower().endswith(('.mp4', '.avi')):  # Add other video formats as needed\n            file_path = os.path.join(video_dir, file)\n            metadata = extract_video_metadata(file_path)\n            if metadata:\n                metadata_file = os.path.join(metadata_dir, f\"{os.path.splitext(file)[0]}_metadata.txt\")\n                with open(metadata_file, 'w') as f:\n                    for key, value in metadata.items():\n                        f.write(f\"{key}: {value}\\n\")",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "video_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "peekOfCode": "video_dir = 'MindMatrix/DataOrganizerAI/SortedFiles/Videos'\nmetadata_dir = 'MindMatrix/DataOrganizerAI/ParsedData/VideoMetadata'\nos.makedirs(metadata_dir, exist_ok=True)\ndef extract_video_metadata(file_path):\n    try:\n        clip = VideoFileClip(file_path)\n        return {\n            \"Duration\": clip.duration,\n            \"FPS\": clip.fps,\n            \"Resolution\": clip.size",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "documentation": {}
-    },
-    {
-        "label": "metadata_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
-        "peekOfCode": "metadata_dir = 'MindMatrix/DataOrganizerAI/ParsedData/VideoMetadata'\nos.makedirs(metadata_dir, exist_ok=True)\ndef extract_video_metadata(file_path):\n    try:\n        clip = VideoFileClip(file_path)\n        return {\n            \"Duration\": clip.duration,\n            \"FPS\": clip.fps,\n            \"Resolution\": clip.size\n        }",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.FileParsing.video_metadata_extractor",
+        "importPath": "IntegrationEngine.Scripts.decompress_files",
+        "description": "IntegrationEngine.Scripts.decompress_files",
+        "peekOfCode": "processing_dir = \"IntegrationEngine/Processing\"\ndef decompress_zip(file_path, destination, progress_bar):\n    with zipfile.ZipFile(file_path, \"r\") as zip_ref:\n        for file in tqdm(\n            iterable=zip_ref.namelist(),\n            total=len(zip_ref.namelist()),\n            desc=f\"Decompressing ZIP: {os.path.basename(file_path)}\",\n            unit=\"file\",\n            leave=False,\n        ):",
+        "detail": "IntegrationEngine.Scripts.decompress_files",
         "documentation": {}
     },
     {
@@ -590,78 +226,6 @@
         "description": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
         "peekOfCode": "archive_formats = [\".zip\", \".tar\", \".rar\"]\ndef uncompress_file(file_path, destination):\n    \"\"\"\n    Uncompresses a file to the specified destination.\n    Args:\n        file_path (str): The path of the file to be uncompressed.\n        destination (str): The destination directory where the uncompressed files will be placed.\n    Returns:\n        bool: True if the file was successfully uncompressed, False otherwise.\n    \"\"\"",
         "detail": "MindMatrix.DataOrganizerAI.Scripts.FileSorting.sort_by_type",
-        "documentation": {}
-    },
-    {
-        "label": "monitor_performance",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Performance Monitoring Script:.performance_monitoring",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Performance Monitoring Script:.performance_monitoring",
-        "peekOfCode": "def monitor_performance():\n    cpu_usage = psutil.cpu_percent(interval=1)\n    memory_usage = psutil.virtual_memory().percent\n    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')\n    logging.info(f\"{timestamp} - CPU Usage: {cpu_usage}%, Memory Usage: {memory_usage}%\")\nif __name__ == '__main__':\n    monitor_performance()",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Performance Monitoring Script:.performance_monitoring",
-        "documentation": {}
-    },
-    {
-        "label": "check_compliance",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Security and Compliance Scripts:.security_compliance",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Security and Compliance Scripts:.security_compliance",
-        "peekOfCode": "def check_compliance(file_path):\n    # Example compliance checks\n    # Modify this function based on specific security and compliance needs\n    try:\n        with open(file_path, \"r\") as file:\n            content = file.read()\n            # Apply compliance checks to the content\n            # For example, check for sensitive information, proper data formats, etc.\n            if \"sensitive\" in content:  # Placeholder condition\n                logging.warning(f\"Compliance issue detected in {file_path}\")",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Security and Compliance Scripts:.security_compliance",
-        "documentation": {}
-    },
-    {
-        "label": "enforce_security_and_compliance",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Security and Compliance Scripts:.security_compliance",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Security and Compliance Scripts:.security_compliance",
-        "peekOfCode": "def enforce_security_and_compliance():\n    for file in os.listdir(data_dir):\n        file_path = os.path.join(data_dir, file)\n        check_compliance(file_path)\nif __name__ == \"__main__\":\n    enforce_security_and_compliance()",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Security and Compliance Scripts:.security_compliance",
-        "documentation": {}
-    },
-    {
-        "label": "data_dir",
-        "kind": 5,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.Security and Compliance Scripts:.security_compliance",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.Security and Compliance Scripts:.security_compliance",
-        "peekOfCode": "data_dir = \"MindMatrix/DataOrganizerAI\"\ndef check_compliance(file_path):\n    # Example compliance checks\n    # Modify this function based on specific security and compliance needs\n    try:\n        with open(file_path, \"r\") as file:\n            content = file.read()\n            # Apply compliance checks to the content\n            # For example, check for sensitive information, proper data formats, etc.\n            if \"sensitive\" in content:  # Placeholder condition",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.Security and Compliance Scripts:.security_compliance",
-        "documentation": {}
-    },
-    {
-        "label": "check_and_install",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.[Other Scripts].check_requirements",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.[Other Scripts].check_requirements",
-        "peekOfCode": "def check_and_install(package):\n    try:\n        subprocess.run(['pip', 'install', package], check=True)\n    except subprocess.CalledProcessError:\n        print(f\"Failed to install {package}\")\ndef main():\n    requirements = ['mutagen', 'Pillow', 'PyPDF2', 'moviepy']\n    for package in requirements:\n        check_and_install(package)\nif __name__ == '__main__':",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.[Other Scripts].check_requirements",
-        "documentation": {}
-    },
-    {
-        "label": "main",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.[Other Scripts].check_requirements",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.[Other Scripts].check_requirements",
-        "peekOfCode": "def main():\n    requirements = ['mutagen', 'Pillow', 'PyPDF2', 'moviepy']\n    for package in requirements:\n        check_and_install(package)\nif __name__ == '__main__':\n    main()",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.[Other Scripts].check_requirements",
-        "documentation": {}
-    },
-    {
-        "label": "run_parsing_script",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.data_parsing_master",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.data_parsing_master",
-        "peekOfCode": "def run_parsing_script(script_path, file_type_directory):\n    subprocess.run([\"python\", script_path, file_type_directory])\ndef main():\n    base_dir = '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI'\n    sorted_dir = os.path.join(base_dir, 'SortedFiles')\n    for file_type in os.listdir(sorted_dir):\n        file_type_path = os.path.join(sorted_dir, file_type)\n        if file_type == 'Documents':\n            run_parsing_script(os.path.join(base_dir, '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/Scripts/FileParsing/text_parser.py'), file_type_path)\n        elif file_type == 'Images':",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.data_parsing_master",
-        "documentation": {}
-    },
-    {
-        "label": "main",
-        "kind": 2,
-        "importPath": "MindMatrix.DataOrganizerAI.Scripts.data_parsing_master",
-        "description": "MindMatrix.DataOrganizerAI.Scripts.data_parsing_master",
-        "peekOfCode": "def main():\n    base_dir = '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI'\n    sorted_dir = os.path.join(base_dir, 'SortedFiles')\n    for file_type in os.listdir(sorted_dir):\n        file_type_path = os.path.join(sorted_dir, file_type)\n        if file_type == 'Documents':\n            run_parsing_script(os.path.join(base_dir, '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/Scripts/FileParsing/text_parser.py'), file_type_path)\n        elif file_type == 'Images':\n            run_parsing_script(os.path.join(base_dir, '/home/ncacord/Desktop/raphael_core/AI_Core/DataOrganizerAI/Scripts/FileParsing/image_metadata_extractor.py'), file_type_path)\n        elif file_type == 'Audio':",
-        "detail": "MindMatrix.DataOrganizerAI.Scripts.data_parsing_master",
         "documentation": {}
     },
     {
