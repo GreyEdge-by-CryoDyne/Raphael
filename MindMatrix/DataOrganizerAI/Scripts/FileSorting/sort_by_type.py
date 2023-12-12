@@ -39,19 +39,13 @@ archive_formats = [".zip", ".tar", ".rar"]
 
 
 import logging
-import zipfile
-import tarfile
-import rarfile
-import shutil
-import shutil
 import os
-import shutil
-import zipfile
-import tarfile
 import rarfile
-import logging
+import shutil
+import tarfile
+import zipfile
 
-def uncompress_file_new(file_path, destination):
+def uncompress_file(file_path, destination): # type: ignore
     """
     Uncompresses a file to the specified destination.
 
@@ -73,7 +67,13 @@ def uncompress_file_new(file_path, destination):
             with rarfile.RarFile(file_path, "r") as rar_ref:
                 rar_ref.extractall(destination)
         return True
-    except (zipfile.BadZipFile, tarfile.TarError, rarfile.RarCannotExec) as e:
+    except zipfile.BadZipFile as e:
+        logging.error("Failed to uncompress %s: %s", file_path, e)
+        return False
+    except tarfile.TarError as e:
+        logging.error("Failed to uncompress %s: %s", file_path, e)
+        return False
+    except rarfile.RarCannotExec as e:
         logging.error("Failed to uncompress %s: %s", file_path, e)
         return False
 
@@ -121,6 +121,7 @@ def sort_files_new():
             shutil.move(file_path, uncompressible_dir)
 # Ensure existence of necessary directories
 os.makedirs(SORTED_DIR, exist_ok=True)
+# Ensure existence of necessary directories
 os.makedirs(UNCOMPRESSIBLE_DIR, exist_ok=True)
 
 # Supported file types for sorting
