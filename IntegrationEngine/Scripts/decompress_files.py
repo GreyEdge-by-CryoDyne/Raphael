@@ -2,51 +2,64 @@ import os
 import zipfile
 import py7zr
 import logging
-
-# Correct path for the Logs directory
-log_file_path = "/home/ncacord/Desktop/Raphael/IntegrationEngine/Logs/decompression.log"
+from tqdm import tqdm
 
 # Setup basic logging
 logging.basicConfig(
-    filename=log_file_path,
+    filename="IntegrationEngine/Logs/decompression.log",
     level=logging.INFO,
     format="%(asctime)s:%(levelname)s:%(message)s",
 )
 
-input_dir = "/home/ncacord/Desktop/Raphael/IntegrationEngine/Input"
-processed_dir = "/home/ncacord/Desktop/Raphael/IntegrationEngine/ProcessedData"
+input_dir = "IntegrationEngine/Input"
+processing_dir = "IntegrationEngine/Processing"
 
 
-def decompress_file(file_path, extension):
-    """
-    Decompresses a file based on its extension and logs any errors.
-    """
+def decompress_zip(file_path, destination, progress_bar):
+    with zipfile.ZipFile(file_path, "r") as zip_ref:
+        for file in tqdm(
+            iterable=zip_ref.namelist(),
+            total=len(zip_ref.namelist()),
+            desc=f"Decompressing ZIP: {os.path.basename(file_path)}",
+            unit="file",
+            leave=False,
+        ):
+            zip_ref.extract(member=file, path=destination)
+            progress_bar.update(1)
+
+
+def decompress_7z(file_path, destination, progress_bar):
+    with py7zr.SevenZipFile(file_path, mode="r") as z:
+        for file in tqdm(
+            iterable=z.getnames(),
+            total=len(z.getnames()),
+            desc=f"Decompressing 7Z: {os.path.basename(file_path)}",
+            unit="file",
+            leave=False,
+        ):
+            z.extract(targets=[file], path=destination)
+            progress_bar.update(1)
+
+
+def decompress_file(file_path, destination):
     try:
-        if extension == ".zip":
-            with zipfile.ZipFile(file_path, "r") as zip_ref:
-                zip_ref.extractall(processed_dir)
-        elif extension == ".7z":
-            with py7zr.SevenZipFile(file_path, mode="r") as z:
-                z.extractall(processed_dir)
-        logging.info(f"Successfully decompressed: {file_path}")
+        file_extension = os.path.splitext(file_path)[1]
+        with tqdm(total=1, desc=f"Processing {os.path.basename(file_path)}") as pbar:
+            if file_extension == ".zip":
+                decompress_zip(file_path, destination, pbar)
+            elif file_extension == ".7z":
+                decompress_7z(file_path, destination, pbar)
+        logging.info(f"Decompressed: {file_path}")
     except Exception as e:
         logging.error(f"Error decompressing {file_path}: {e}")
-        return False  # Indicates failure
-    return True  # Indicates success
 
 
-def main():
-    """
-    Main function to decompress all .zip and .7z files in the input directory.
-    Skips files if decompression fails.
-    """
-    for file in os.listdir(input_dir):
-        file_path = os.path.join(input_dir, file)
-        if file.endswith(".zip") or file.endswith(".7z"):
-            success = decompress_file(file_path, os.path.splitext(file)[1])
-            if not success:
-                logging.info(f"Skipping file due to decompression error: {file_path}")
+def process_input_directory():
+    for filename in os.listdir(input_dir):
+        file_path = os.path.join(input_dir, filename)
+        if filename.endswith(".zip") or filename.endswith(".7z"):
+            decompress_file(file_path, processing_dir)
 
 
 if __name__ == "__main__":
-    main()
+    process_input_directory()
