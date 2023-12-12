@@ -1,0 +1,102 @@
+2023-12-12 12:09:18,230:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/stackapps.com.7z
+2023-12-12 12:09:18,419:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/ux.meta.stackexchange.com.7z
+2023-12-12 12:09:18,430:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tezos.meta.stackexchange.com.7z
+2023-12-12 12:09:18,438:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/stellar.meta.stackexchange.com.7z
+2023-12-12 12:09:18,609:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/stackoverflow.com-Tags.7z
+2023-12-12 12:09:19,354:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tor.stackexchange.com.7z
+2023-12-12 12:09:19,556:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/vegetarianism.stackexchange.com.7z
+2023-12-12 12:09:19,585:ERROR:Error decompressing /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tezos.stackexchange.com.7z: Invalid data stream
+2023-12-12 12:09:19,586:INFO:Skipping file due to decompression error: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tezos.stackexchange.com.7z
+2023-12-12 12:09:19,775:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/spanish.meta.stackexchange.com.7z
+2023-12-12 12:09:19,827:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/vegetarianism.meta.stackexchange.com.7z
+2023-12-12 12:09:20,061:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/wordpress.meta.stackexchange.com.7z
+2023-12-12 12:09:26,013:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/space.stackexchange.com.7z
+2023-12-12 12:09:26,072:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tor.meta.stackexchange.com.7z
+2023-12-12 12:09:26,484:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/windowsphone.stackexchange.com.7z
+2023-12-12 12:09:27,366:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/tex.meta.stackexchange.com.7z
+2023-12-12 12:09:27,584:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/space.meta.stackexchange.com.7z
+2023-12-12 12:09:28,221:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/stats.meta.stackexchange.com.7z
+2023-12-12 12:09:29,046:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/woodworking.stackexchange.com.7z
+2023-12-12 12:09:29,046:ERROR:Error decompressing /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/ux.stackexchange.com.7z: invalid header data
+2023-12-12 12:09:29,046:INFO:Skipping file due to decompression error: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/ux.stackexchange.com.7z
+2023-12-12 12:09:29,081:INFO:Successfully decompressed: /home/ncacord/Desktop/Raphael/IntegrationEngine/Input/woodworking.meta.stackexchange.com.7z
+2023-12-12 12:21:13,957:INFO:Decompressed: IntegrationEngine/Input/stackapps.com.7z
+2023-12-12 12:21:14,545:INFO:Decompressed: IntegrationEngine/Input/ux.meta.stackexchange.com.7z
+2023-12-12 12:21:14,600:INFO:Decompressed: IntegrationEngine/Input/tezos.meta.stackexchange.com.7z
+2023-12-12 12:21:14,666:INFO:Decompressed: IntegrationEngine/Input/stellar.meta.stackexchange.com.7z
+2023-12-12 12:21:14,853:INFO:Decompressed: IntegrationEngine/Input/stackoverflow.com-Tags.7z
+2023-12-12 12:21:16,267:INFO:Decompressed: IntegrationEngine/Input/tor.stackexchange.com.7z
+2023-12-12 12:21:16,761:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.stackexchange.com.7z
+2023-12-12 12:21:16,874:ERROR:Error decompressing IntegrationEngine/Input/tezos.stackexchange.com.7z: Invalid data stream
+2023-12-12 12:21:17,236:INFO:Decompressed: IntegrationEngine/Input/spanish.meta.stackexchange.com.7z
+2023-12-12 12:21:17,351:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.meta.stackexchange.com.7z
+2023-12-12 12:21:17,832:INFO:Decompressed: IntegrationEngine/Input/wordpress.meta.stackexchange.com.7z
+2023-12-12 12:21:26,304:INFO:Decompressed: IntegrationEngine/Input/space.stackexchange.com.7z
+2023-12-12 12:21:26,458:INFO:Decompressed: IntegrationEngine/Input/tor.meta.stackexchange.com.7z
+2023-12-12 12:21:27,280:INFO:Decompressed: IntegrationEngine/Input/windowsphone.stackexchange.com.7z
+2023-12-12 12:21:29,078:INFO:Decompressed: IntegrationEngine/Input/tex.meta.stackexchange.com.7z
+2023-12-12 12:21:29,527:INFO:Decompressed: IntegrationEngine/Input/space.meta.stackexchange.com.7z
+2023-12-12 12:21:30,775:INFO:Decompressed: IntegrationEngine/Input/stats.meta.stackexchange.com.7z
+2023-12-12 12:21:32,538:INFO:Decompressed: IntegrationEngine/Input/woodworking.stackexchange.com.7z
+2023-12-12 12:21:32,540:ERROR:Error decompressing IntegrationEngine/Input/ux.stackexchange.com.7z: invalid header data
+2023-12-12 12:21:32,664:INFO:Decompressed: IntegrationEngine/Input/woodworking.meta.stackexchange.com.7z
+2023-12-12 12:25:28,741:INFO:Decompressed: IntegrationEngine/Input/stackapps.com.7z
+2023-12-12 12:25:29,226:INFO:Decompressed: IntegrationEngine/Input/ux.meta.stackexchange.com.7z
+2023-12-12 12:25:29,273:INFO:Decompressed: IntegrationEngine/Input/tezos.meta.stackexchange.com.7z
+2023-12-12 12:25:29,336:INFO:Decompressed: IntegrationEngine/Input/stellar.meta.stackexchange.com.7z
+2023-12-12 12:25:29,492:INFO:Decompressed: IntegrationEngine/Input/stackoverflow.com-Tags.7z
+2023-12-12 12:25:30,910:INFO:Decompressed: IntegrationEngine/Input/tor.stackexchange.com.7z
+2023-12-12 12:25:31,442:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.stackexchange.com.7z
+2023-12-12 12:25:31,544:ERROR:Error decompressing IntegrationEngine/Input/tezos.stackexchange.com.7z: Invalid data stream
+2023-12-12 12:25:31,892:INFO:Decompressed: IntegrationEngine/Input/spanish.meta.stackexchange.com.7z
+2023-12-12 12:25:32,040:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.meta.stackexchange.com.7z
+2023-12-12 12:25:32,522:INFO:Decompressed: IntegrationEngine/Input/wordpress.meta.stackexchange.com.7z
+2023-12-12 12:25:40,658:INFO:Decompressed: IntegrationEngine/Input/space.stackexchange.com.7z
+2023-12-12 12:25:40,812:INFO:Decompressed: IntegrationEngine/Input/tor.meta.stackexchange.com.7z
+2023-12-12 12:25:41,634:INFO:Decompressed: IntegrationEngine/Input/windowsphone.stackexchange.com.7z
+2023-12-12 12:25:43,231:INFO:Decompressed: IntegrationEngine/Input/tex.meta.stackexchange.com.7z
+2023-12-12 12:25:43,681:INFO:Decompressed: IntegrationEngine/Input/space.meta.stackexchange.com.7z
+2023-12-12 12:25:44,896:INFO:Decompressed: IntegrationEngine/Input/stats.meta.stackexchange.com.7z
+2023-12-12 12:25:46,516:INFO:Decompressed: IntegrationEngine/Input/woodworking.stackexchange.com.7z
+2023-12-12 12:25:46,517:ERROR:Error decompressing IntegrationEngine/Input/ux.stackexchange.com.7z: invalid header data
+2023-12-12 12:25:46,682:INFO:Decompressed: IntegrationEngine/Input/woodworking.meta.stackexchange.com.7z
+2023-12-12 12:29:24,570:INFO:Decompressed: IntegrationEngine/Input/stackapps.com.7z
+2023-12-12 12:29:25,046:INFO:Decompressed: IntegrationEngine/Input/ux.meta.stackexchange.com.7z
+2023-12-12 12:29:25,071:INFO:Decompressed: IntegrationEngine/Input/tezos.meta.stackexchange.com.7z
+2023-12-12 12:29:25,127:INFO:Decompressed: IntegrationEngine/Input/stellar.meta.stackexchange.com.7z
+2023-12-12 12:29:25,280:INFO:Decompressed: IntegrationEngine/Input/stackoverflow.com-Tags.7z
+2023-12-12 12:29:26,700:INFO:Decompressed: IntegrationEngine/Input/tor.stackexchange.com.7z
+2023-12-12 12:29:27,171:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.stackexchange.com.7z
+2023-12-12 12:29:27,235:ERROR:Error decompressing IntegrationEngine/Input/tezos.stackexchange.com.7z: Invalid data stream
+2023-12-12 12:29:27,625:INFO:Decompressed: IntegrationEngine/Input/spanish.meta.stackexchange.com.7z
+2023-12-12 12:29:27,760:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.meta.stackexchange.com.7z
+2023-12-12 12:29:28,320:INFO:Decompressed: IntegrationEngine/Input/wordpress.meta.stackexchange.com.7z
+2023-12-12 12:29:36,680:INFO:Decompressed: IntegrationEngine/Input/space.stackexchange.com.7z
+2023-12-12 12:29:36,826:INFO:Decompressed: IntegrationEngine/Input/tor.meta.stackexchange.com.7z
+2023-12-12 12:29:37,628:INFO:Decompressed: IntegrationEngine/Input/windowsphone.stackexchange.com.7z
+2023-12-12 12:29:39,211:INFO:Decompressed: IntegrationEngine/Input/tex.meta.stackexchange.com.7z
+2023-12-12 12:29:39,699:INFO:Decompressed: IntegrationEngine/Input/space.meta.stackexchange.com.7z
+2023-12-12 12:29:40,845:INFO:Decompressed: IntegrationEngine/Input/stats.meta.stackexchange.com.7z
+2023-12-12 12:29:42,440:INFO:Decompressed: IntegrationEngine/Input/woodworking.stackexchange.com.7z
+2023-12-12 12:29:42,442:ERROR:Error decompressing IntegrationEngine/Input/ux.stackexchange.com.7z: invalid header data
+2023-12-12 12:29:42,608:INFO:Decompressed: IntegrationEngine/Input/woodworking.meta.stackexchange.com.7z
+2023-12-12 12:35:34,029:INFO:Decompressed: IntegrationEngine/Input/stackapps.com.7z
+2023-12-12 12:35:34,499:INFO:Decompressed: IntegrationEngine/Input/ux.meta.stackexchange.com.7z
+2023-12-12 12:35:34,521:INFO:Decompressed: IntegrationEngine/Input/tezos.meta.stackexchange.com.7z
+2023-12-12 12:35:34,574:INFO:Decompressed: IntegrationEngine/Input/stellar.meta.stackexchange.com.7z
+2023-12-12 12:35:34,734:INFO:Decompressed: IntegrationEngine/Input/stackoverflow.com-Tags.7z
+2023-12-12 12:35:36,095:INFO:Decompressed: IntegrationEngine/Input/tor.stackexchange.com.7z
+2023-12-12 12:35:36,534:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.stackexchange.com.7z
+2023-12-12 12:35:36,624:ERROR:Error decompressing IntegrationEngine/Input/tezos.stackexchange.com.7z: Invalid data stream
+2023-12-12 12:35:36,981:INFO:Decompressed: IntegrationEngine/Input/spanish.meta.stackexchange.com.7z
+2023-12-12 12:35:37,070:INFO:Decompressed: IntegrationEngine/Input/vegetarianism.meta.stackexchange.com.7z
+2023-12-12 12:35:37,629:INFO:Decompressed: IntegrationEngine/Input/wordpress.meta.stackexchange.com.7z
+2023-12-12 12:35:46,119:INFO:Decompressed: IntegrationEngine/Input/space.stackexchange.com.7z
+2023-12-12 12:35:46,300:INFO:Decompressed: IntegrationEngine/Input/tor.meta.stackexchange.com.7z
+2023-12-12 12:35:47,056:INFO:Decompressed: IntegrationEngine/Input/windowsphone.stackexchange.com.7z
+2023-12-12 12:35:48,640:INFO:Decompressed: IntegrationEngine/Input/tex.meta.stackexchange.com.7z
+2023-12-12 12:35:49,107:INFO:Decompressed: IntegrationEngine/Input/space.meta.stackexchange.com.7z
+2023-12-12 12:35:50,288:INFO:Decompressed: IntegrationEngine/Input/stats.meta.stackexchange.com.7z
+2023-12-12 12:35:51,845:INFO:Decompressed: IntegrationEngine/Input/woodworking.stackexchange.com.7z
+2023-12-12 12:35:51,848:ERROR:Error decompressing IntegrationEngine/Input/ux.stackexchange.com.7z: invalid header data
+2023-12-12 12:35:52,008:INFO:Decompressed: IntegrationEngine/Input/woodworking.meta.stackexchange.com.7z
