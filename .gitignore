@@ -1,9 +1,9 @@
 /IntegrationEngine/Input
 /IntegrationEngine/Model/GPT_2
-*/.gif
-*/.jpg
-*/.png
-*/.zip
-*/.7z
+*.gif
+*.jpg
+*.png
+*.zip
+*.7z
 IntegrationEngine/Model/GPT_2
 *.php
