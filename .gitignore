@@ -1,4 +1,5 @@
-IntegrationEngine/Input
+/IntegrationEngine/Input
+/IntegrationEngine/Model/GPT_2
 */.gif
 */.jpg
 */.png
