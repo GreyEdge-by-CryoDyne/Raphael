@@ -44,6 +44,41 @@
         "documentation": {}
     },
     {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "tarfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tarfile",
+        "description": "tarfile",
+        "detail": "tarfile",
+        "documentation": {}
+    },
+    {
+        "label": "rarfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "rarfile",
+        "description": "rarfile",
+        "detail": "rarfile",
+        "documentation": {}
+    },
+    {
         "label": "nltk",
         "kind": 6,
         "isExtraImport": true,
@@ -145,6 +180,51 @@
         "description": "IntegrationEngine.Scripts.decompress_files",
         "peekOfCode": "processing_dir = \"IntegrationEngine/Processing\"\ndef decompress_zip(file_path, destination, progress_bar):\n    with zipfile.ZipFile(file_path, \"r\") as zip_ref:\n        for file in tqdm(\n            iterable=zip_ref.namelist(),\n            total=len(zip_ref.namelist()),\n            desc=f\"Decompressing ZIP: {os.path.basename(file_path)}\",\n            unit=\"file\",\n            leave=False,\n        ):",
         "detail": "IntegrationEngine.Scripts.decompress_files",
+        "documentation": {}
+    },
+    {
+        "label": "template_7z",
+        "kind": 2,
+        "importPath": "IntegrationEngine.Scripts.decompression_methods",
+        "description": "IntegrationEngine.Scripts.decompression_methods",
+        "peekOfCode": "def template_7z(file_path, destination, progress_bar):\n    try:\n        with py7zr.SevenZipFile(file_path, \"r\") as seven_zip_ref:\n            for file in tqdm(\n                iterable=seven_zip_ref.getnames(),\n                total=len(seven_zip_ref.getnames()),\n                desc=f\"Decompressing 7Z: {file_path}\",\n                unit=\"file\",\n                leave=False,\n            ):",
+        "detail": "IntegrationEngine.Scripts.decompression_methods",
+        "documentation": {}
+    },
+    {
+        "label": "template_tar",
+        "kind": 2,
+        "importPath": "IntegrationEngine.Scripts.decompression_methods",
+        "description": "IntegrationEngine.Scripts.decompression_methods",
+        "peekOfCode": "def template_tar(file_path, destination, progress_bar):\n    try:\n        with tarfile.open(file_path, 'r') as tar_ref:\n            for file in tqdm(\n                iterable=tar_ref.getnames(),\n                total=len(tar_ref.getnames()),\n                desc=f\"Decompressing TAR: {file_path}\",\n                unit=\"file\",\n                leave=False,\n            ):",
+        "detail": "IntegrationEngine.Scripts.decompression_methods",
+        "documentation": {}
+    },
+    {
+        "label": "template_tar_xz",
+        "kind": 2,
+        "importPath": "IntegrationEngine.Scripts.decompression_methods",
+        "description": "IntegrationEngine.Scripts.decompression_methods",
+        "peekOfCode": "def template_tar_xz(file_path, destination, progress_bar):\n    template_tar(file_path, destination, progress_bar)\ndef template_zip(file_path, destination, progress_bar, password=None):\n    try:\n        with zipfile.ZipFile(file_path, 'r') as zip_ref:\n            for file in tqdm(\n                iterable=zip_ref.namelist(),\n                total=len(zip_ref.namelist()),\n                desc=f\"Decompressing ZIP: {file_path}\",\n                unit=\"file\",",
+        "detail": "IntegrationEngine.Scripts.decompression_methods",
+        "documentation": {}
+    },
+    {
+        "label": "template_zip",
+        "kind": 2,
+        "importPath": "IntegrationEngine.Scripts.decompression_methods",
+        "description": "IntegrationEngine.Scripts.decompression_methods",
+        "peekOfCode": "def template_zip(file_path, destination, progress_bar, password=None):\n    try:\n        with zipfile.ZipFile(file_path, 'r') as zip_ref:\n            for file in tqdm(\n                iterable=zip_ref.namelist(),\n                total=len(zip_ref.namelist()),\n                desc=f\"Decompressing ZIP: {file_path}\",\n                unit=\"file\",\n                leave=False,\n            ):",
+        "detail": "IntegrationEngine.Scripts.decompression_methods",
+        "documentation": {}
+    },
+    {
+        "label": "template_rar",
+        "kind": 2,
+        "importPath": "IntegrationEngine.Scripts.decompression_methods",
+        "description": "IntegrationEngine.Scripts.decompression_methods",
+        "peekOfCode": "def template_rar(file_path, destination, progress_bar, password=None):\n    try:\n        with rarfile.RarFile(file_path, 'r') as rar_ref:\n            for file in tqdm(\n                iterable=rar_ref.namelist(),\n                total=len(rar_ref.namelist()),\n                desc=f\"Decompressing RAR: {file_path}\",\n                unit=\"file\",\n                leave=False,\n            ):",
+        "detail": "IntegrationEngine.Scripts.decompression_methods",
         "documentation": {}
     },
     {
